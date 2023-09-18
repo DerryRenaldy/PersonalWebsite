@@ -39,7 +39,7 @@ const calculateTotalHeight = (): number => {
 // ================ MAIN COMPONENT ================
 
 const HEIGHT_SCROLLBAR = 80;
-const SCROLLBAR_HIDE_DELAY = 350;
+// const SCROLLBAR_HIDE_DELAY = 350;
 
 type Position = {
   xRate: number;
@@ -75,14 +75,15 @@ const CustomScrollbar = () => {
     scrollBarPosition = _latest;
     scrollBarOpacity.set({ opacity: 1 });
     if (scrollingTimer !== null) {
-      clearTimeout(scrollingTimer);
+      // clearTimeout(scrollingTimer);
     }
 
     if (!isHoverStart && !isScrollBarTapped) {
       setScrollingTimer(
-        setTimeout(() => {
-          scrollBarOpacity.start({ opacity: 0, transition: { duration: 0.2 } });
-        }, SCROLLBAR_HIDE_DELAY)
+        100
+        // setTimeout(() => {
+        //   scrollBarOpacity.start({ opacity: 0, transition: { duration: 0.2 } });
+        // }, SCROLLBAR_HIDE_DELAY)
       );
     }
   });

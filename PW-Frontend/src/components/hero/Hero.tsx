@@ -4,7 +4,6 @@ import Image from "../../assets/images";
 import react from "react";
 import TitleText from "./heroContent/TitleText";
 import ScrollIndicator from "./heroContent/ScrollIndicator";
-import RockModel from "./heroContent/rockModel3d/RockModel";
 
 const showHideIndicator = (
   isScrolled: boolean,
