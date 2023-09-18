@@ -1,0 +1,59 @@
+.hero-full {
+  height: 100vh;
+}
+
+.object {
+  animation: MoveUpDown 2s ease-out infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.arrowScroll {
+  animation: ScrollDown 1.2s ease-out infinite;
+}
+
+.arrowContainer {
+  animation: ScaleUpDown 1.2s linear infinite;
+}
+
+@keyframes ScaleUpDown {
+  0% {
+    transform: scale(100%);
+  }
+  15% {
+    transform: scale(95%);
+  }
+  25% {
+    transform: scale(95%);
+  }
+  45% {
+    transform: scale(100%);
+  }
+}
+
+@keyframes ScrollDown {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(9px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(-9px);
+    opacity: 0;
+  }
+  45% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

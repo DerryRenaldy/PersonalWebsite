@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/Nunito-VariableFont_wght.ttf");
+}
+
+@layer base {
+  :root {
+    @apply bg-background;
+  }
+}
+
+@layer component {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .noise::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    opacity: 0.03;
+    z-index: 100000;
+    pointer-events: none;
+    background: url("assets/images/noise.gif");
+  }
+
+  .shadowCursor {
+    box-shadow: rgba(255, 255, 255, 1) 0px 0px 1000px;
+  }
+}

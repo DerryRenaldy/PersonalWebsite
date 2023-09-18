@@ -1,0 +1,44 @@
+.frame {
+  width: 1740px;
+  height: 1300px;
+  zoom: 0.6;
+
+  /* -ms-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  -webkit-transform: scale(0.6); */
+  transform: scale(0.6);
+
+  /* -ms-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -o-transform-origin: center center;
+  -webkit-transform-origin: center center; */
+  transform-origin: center center;
+}
+
+.wrap {
+  position: absolute;
+  overflow: hidden;
+  content: "";
+  pointer-events: none;
+  background-image: url("../../../assets/monitor/layers/png/reflection.png"),
+    url("../../../assets/monitor/layers/png/smudges.png"),
+    url("../../../assets/monitor/layers/png/dust.png");
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center, center, center;
+  opacity: 0.5;
+}
+
+.videoPlayer1 {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.videoPlayer2 {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.shadowFrame {
+  box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 2000px;
+}
