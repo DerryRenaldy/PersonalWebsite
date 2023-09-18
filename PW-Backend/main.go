@@ -1,15 +1,15 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"PW-Backend/config"
+	"PW-Backend/server"
+
+	"github.com/DerryRenaldy/logger/logger"
 )
 
 func main(){
-	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error{
-		return c.SendString("Hello World")
-	})
-
-	app.Listen(":3000")
+	cfg := config.InitConfig()
+	log := logger.New(cfg.AppName, "development", "debug")
+	newServer := server.New(log, *cfg)
+	newServer.Start()
 }

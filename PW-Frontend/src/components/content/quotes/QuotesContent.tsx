@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 const QuotesContent = () => {
   const [quote, setQuote] = useState<string>("");
-  const baseUrl = "http://localhost:3001/";
-  const path = "quotes";
+  const baseUrl = "http://localhost:3000/api/v1/";
+  const path = "quotes/?category=happiness";
 
   const url = baseUrl + path;
   const config = {
@@ -17,8 +17,8 @@ const QuotesContent = () => {
     axios
       .get(url, config)
       .then((res) => {
-        setQuote(res.data[0].quote);
-        console.log(res.data[0].quote);
+        setQuote(res.data.data.quote);
+        console.log(res.data.data.quote);
       })
       .catch((err) => {
         console.log(err);
