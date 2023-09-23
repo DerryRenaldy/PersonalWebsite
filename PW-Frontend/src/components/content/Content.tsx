@@ -4,6 +4,8 @@ import Biography from "./biography/Biography";
 import Skills from "./skills/Skills";
 import WorkApproach from "./workApproach/WorkApproach";
 import Quotes from "./quotes/Quotes";
+import MissionAndGoal from "./missionAndGoal/MissionAndGoal";
+import Music from "./music/Music";
 
 const Content = () => {
   return (
@@ -18,15 +20,19 @@ const Content = () => {
             <div className="bg-secondary">
               <WorkApproach />
             </div>
-            <div className="row-span-2 bg-secondary">
+            <div className="bg-secondary">
               <Skills />
             </div>
             <div className="bg-secondary">
               <Quotes />
             </div>
-            <div className="relative col-span-2 row-span-2 border">Iframe</div>
+            <div className="bg-secondary">
+              <Music />
+            </div>
+            <div className="col-span-2 bg-secondary">
+              <MissionAndGoal />
+            </div>
             <div className="border">Tool Stack</div>
-            <div className="border">Mission and Goals</div>
             <div className="col-span-2 border">Interest</div>
           </div>
         </div>

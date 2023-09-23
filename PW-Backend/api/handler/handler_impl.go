@@ -11,7 +11,18 @@ func (h *HandlerImpl) GetQuote(c *fiber.Ctx) error{
 	functionName := "HandlerImpl/GetQuote"
 	ctx := c.Context()
 
-	category := c.Query("category")
+	var payload dto.QuoteRequest
+	errBodyParse := c.BodyParser(&payload)
+	if errBodyParse != nil {
+		h.log.Errorf("%s-ERROR (c.BodyParser)= %s", functionName, errBodyParse)
+		return c.Status(fiber.StatusInternalServerError).JSON(&errors.CommonError{
+			Code: fiber.StatusInternalServerError,
+			Message: "internal server error",
+			ActualError: errBodyParse.Error(),
+		})
+	}
+
+	category := payload.Category
 
 	quote, err := h.service.GetQuotes(ctx, category)
 	if err != nil {

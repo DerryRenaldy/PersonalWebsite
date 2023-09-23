@@ -10,12 +10,19 @@ const QuotesContent = () => {
   const config = {
     headers: {
       "content-type": "application/json",
+      "X-Idempotency-Key": "PTr64jUiNYVHUaexXG47FBzvNpgYfM9TmUZp",
     },
   };
 
   useEffect(() => {
     axios
-      .get(url, config)
+      .post(
+        url,
+        {
+          category: "happiness",
+        },
+        config
+      )
       .then((res) => {
         setQuote(res.data.data.quote);
         console.log(res.data.data.quote);
@@ -26,8 +33,8 @@ const QuotesContent = () => {
   }, []);
 
   return (
-    <div>
-      <div className="italic">"{quote}"</div>
+    <div className="flex items-center justify-center h-full">
+      <p className="italic">"{quote}"</p>
     </div>
   );
 };

@@ -15,6 +15,9 @@ type Config struct {
 
 	QuotesBaseUrl string
 	QuotesApiKey string
+
+	SpotifyClientId string
+	SpotifyClientSecret string
 }
 
 func InitConfig() *Config  {
@@ -28,6 +31,8 @@ func InitConfig() *Config  {
 	port := os.Getenv("PORT")
 	quotesBaseUrl := os.Getenv("QUOTES_BASE_URL")
 	quotesApiKey := os.Getenv("QUOTES_API_KEY")
+	spotifyClientId := os.Getenv("SPOTIFY_CLIENT_ID")
+	spotifyClientSecret := os.Getenv("SPOTIFY_CLIENT_SECRET")
 
 	return &Config{
 		AppName: appName,
@@ -35,5 +40,7 @@ func InitConfig() *Config  {
 		Port: port,
 		QuotesBaseUrl: quotesBaseUrl,
 		QuotesApiKey: quotesApiKey,
+		SpotifyClientId: spotifyClientId,
+		SpotifyClientSecret: spotifyClientSecret,
 	}
 }

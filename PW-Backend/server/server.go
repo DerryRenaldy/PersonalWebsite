@@ -6,10 +6,12 @@ import (
 	"PW-Backend/config"
 	"PW-Backend/domain/quotes"
 	"log"
+	"time"
 
 	"github.com/DerryRenaldy/logger/logger"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/idempotency"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
@@ -45,15 +47,20 @@ func (s Server) Start() {
 	app := fiber.New(fiber.Config{
 		Immutable: true,
 	})
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "http://localhost:5173",
+		AllowHeaders:  "Origin, Content-Type, Accept, X-Idempotency-Key",
+	}))
 
 	v1 := app.Group("/api/v1")
 	v1.Use(recover.New())
-	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:5173",
-		AllowHeaders:  "Origin, Content-Type, Accept",
+	v1.Use(idempotency.New(idempotency.Config{
+		Lifetime: 12 * time.Hour,
+		KeyHeader: "X-Idempotency-Key",
+
 	}))
 
-	v1.Get("/quotes", s.handler.GetQuote)
+	v1.Post("/quotes", s.handler.GetQuote)
 
 	log.Print("App started successfully and is listening for HTTP requests on $PORT")
 

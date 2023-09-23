@@ -10,3 +10,7 @@ type QuoteResponse struct {
   Message string `json:"message"`
   Data *Quotes `json:"data"`
 }
+
+type QuoteRequest struct {
+  Category string `json:"category"`
+}
