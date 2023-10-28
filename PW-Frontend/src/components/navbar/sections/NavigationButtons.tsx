@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import VariantsNavbar from "../variants";
+import { useSectionContext } from "components/pages/Context";
 
 const NavigationButtons = () => {
+  const { section } = useSectionContext();
+
   return (
-    <div className="relative flex flex-row justify-between px-2 py-2 rounded-2xl bg-navbar gap-x-10">
+    <div className="relative flex flex-row justify-between px-2 py-2 rounded-2xl backdrop-blur bg-[#464646]/40 gap-x-10">
       <div className="text-[24px] font-extrabold uppercase ml-2 select-none">
         DR
       </div>
@@ -70,6 +73,7 @@ const NavigationButtons = () => {
             <button className="select-none">Contacts</button>
           </motion.a>
         </motion.div>
+        <div className="text-white uppercase">{section}</div>
       </div>
     </div>
   );

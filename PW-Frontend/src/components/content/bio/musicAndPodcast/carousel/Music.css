@@ -1,0 +1,22 @@
+.slick-slide > div {
+  margin: 0 15px;
+}
+.slick-list {
+  margin: 0 -15px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: White !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.slick-dots li button:before {
+  color: White !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

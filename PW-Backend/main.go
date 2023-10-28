@@ -11,5 +11,5 @@ func main(){
 	cfg := config.InitConfig()
 	log := logger.New(cfg.AppName, "development", "debug")
 	newServer := server.New(log, *cfg)
-	newServer.Start()
+	newServer.Start(cfg.Port)
 }

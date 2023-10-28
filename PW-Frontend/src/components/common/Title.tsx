@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const Title = () => {
+const Title = ({ title }: { title: string }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-14">
       <TitleText className="text-center w-[400px] uppercase text-[29px] sm:text-[48px] lg:text-[56px] text-text select-none font-rubik font-bold">
-        Biography
+        {title}
       </TitleText>
     </div>
   );

@@ -46,9 +46,11 @@ const DragableContent = ({
           overflowClipMargin: "content-box",
         }}
         onPointerDown={(_event) => {
+          console.log("Pointer Down");
           setIsGrabbing(true);
         }}
         onPointerUp={(_event) => {
+          console.log("Pointer Up");
           setIsGrabbing(false);
         }}
         className={`pointer-events-auto ${

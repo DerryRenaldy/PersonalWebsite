@@ -10,19 +10,19 @@ type Item = {
 const initialItems: Item[] = [
   {
     id: "WorkApproach-1",
-    content: "Work Approach 1",
+    content: "Value right problems",
   },
   {
     id: "WorkApproach-2",
-    content: "Work Approach 2",
+    content: "Performance is design",
   },
   {
     id: "WorkApproach-3",
-    content: "Work Approach 3",
+    content: "Go messy, then simplify",
   },
   {
     id: "WorkApproach-4",
-    content: "Work Approach 4",
+    content: "Good code is readable code",
   },
 ];
 

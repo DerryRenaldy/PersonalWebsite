@@ -31,7 +31,6 @@ const Navbar = () => {
 
   useEffect(() => {
     moveOpenCVButton(isScrolled, buttonPos);
-    console.log(isScrolled);
 
     window.addEventListener("scroll", () =>
       updateScrollPosition(setIsScrolled)

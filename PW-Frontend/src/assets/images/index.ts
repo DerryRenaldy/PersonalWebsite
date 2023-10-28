@@ -1,4 +1,3 @@
-import computer from "./computer.png";
 import arrowBlack from "./arrow-down-black.png";
 import arrowWhite from "./arrow-down-white.png";
 import jsLogo from "./codingLogo/JS.png";
@@ -13,11 +12,15 @@ import unityLogo from "./codingLogo/unity.png";
 import golangLogo from "./codingLogo/golang.png";
 import profile from "./profile.jpeg";
 import bulletPoints from "./bullet.png";
+import collage from "./collage.jpg";
+import building from "./building.png";
+import gmail from "./contactLogo/gmail.png";
+import likedin from "./contactLogo/linkedin.png";
+import whatsapp from "./contactLogo/whatsapp.png";
 
 const Image = {
   arrowBlack,
   arrowWhite,
-  computer,
   jsLogo,
   tsLogo,
   tailwindLogo,
@@ -30,6 +33,11 @@ const Image = {
   golangLogo,
   profile,
   bulletPoints,
+  collage,
+  building,
+  gmail,
+  likedin,
+  whatsapp,
 };
 
 export default Image;

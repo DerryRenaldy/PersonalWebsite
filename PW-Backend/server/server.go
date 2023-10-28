@@ -5,6 +5,9 @@ import (
 	"PW-Backend/api/service"
 	"PW-Backend/config"
 	"PW-Backend/domain/quotes"
+	"PW-Backend/middleware"
+
+	"fmt"
 	"log"
 	"time"
 
@@ -16,10 +19,10 @@ import (
 )
 
 type Server struct {
-	log logger.ILogger
+	log        logger.ILogger
 	quotesRepo quotes.IQuotes
-	service service.IService
-	handler handler.IHandler
+	service    service.IService
+	handler    handler.IHandler
 }
 
 var SVR *Server
@@ -43,26 +46,28 @@ func (s *Server) Register(cfg config.Config) {
 	s.handler = handler.NewHandlerImpl(s.log, s.service)
 }
 
-func (s Server) Start() {
+func (s Server) Start(port string) {
 	app := fiber.New(fiber.Config{
-		Immutable: true,
+		Immutable:    true,
+		ErrorHandler: middleware.ErrorHandler,
 	})
-	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:5173",
-		AllowHeaders:  "Origin, Content-Type, Accept, X-Idempotency-Key",
-	}))
 
 	v1 := app.Group("/api/v1")
+
 	v1.Use(recover.New())
 	v1.Use(idempotency.New(idempotency.Config{
-		Lifetime: 12 * time.Hour,
+		Lifetime:  1 * time.Hour,
 		KeyHeader: "X-Idempotency-Key",
+	}))
 
+	v1.Use(cors.New(cors.Config{
+		AllowOrigins: "http://localhost:5173,*",
+		AllowHeaders: "Origin, Content-Type, Accept, X-Idempotency-Key",
 	}))
 
 	v1.Post("/quotes", s.handler.GetQuote)
 
-	log.Print("App started successfully and is listening for HTTP requests on $PORT")
+	log.Print(fmt.Sprintf("App started successfully and is listening for HTTP requests on %s", port))
 
-	app.Listen(":3000")
+	app.Listen(":" + port)
 }
