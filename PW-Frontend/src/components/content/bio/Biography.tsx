@@ -1,4 +1,3 @@
-import Title from "components/common/Title";
 import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
 import Quotes from "./quotes/Quotes";
 import MissionAndGoal from "./missionAndGoal/MissionAndGoal";

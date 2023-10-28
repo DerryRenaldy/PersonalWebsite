@@ -2,7 +2,6 @@ import { PanInfo } from "framer-motion";
 import DragableContent from "./dragableContent/DragableContent";
 import { MetaData } from "./dragableContent/DragableContentData";
 import { useEffect, useState } from "react";
-import Title from "components/common/Title";
 
 const Testing = () => {
   const [isGrabbing, setIsGrabbing] = useState(false);
