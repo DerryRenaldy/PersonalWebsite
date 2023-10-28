@@ -9,18 +9,23 @@ import Skills from "./skills/Skills";
 import Contact from "./contact/Contact";
 import Introduction from "./introduction/Introduction";
 import { useSectionContext } from "components/pages/Context";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import useIsTopInView from "components/hooks/useIsTopInView";
 
 const Biography = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isTopInView = useIsTopInView(containerRef);
   const { setSection } = useSectionContext();
 
   useEffect(() => {
-    setSection("Biography");
-  }, []);
+    if (isTopInView) {
+      setSection("Biography");
+    }
+  }, [isTopInView]);
 
   return (
-    <>
-      <Title title={"Biography"} />
+    <div ref={containerRef} className="pt-20">
+      {/* <Title title={"Biography"} /> */}
       <div className="relative">
         <div className="p-10">
           <div className="grid h-full grid-cols-5 gap-6 text-center text-white content-round">
@@ -60,7 +65,7 @@ const Biography = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

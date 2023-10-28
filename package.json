@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-in-viewport": "^1.0.0-alpha.30"
+  }
+}

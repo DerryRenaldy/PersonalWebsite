@@ -19,7 +19,7 @@ const Testing = () => {
 
   return (
     <>
-      <Title title={"Expertise"} />
+      {/* <Title title={"Expertise"} /> */}
       <div className="relative text-white overflow-hidden flex justify-center items-center h-[100vh] w-[100vw]">
         <div
           className="absolute h-full"

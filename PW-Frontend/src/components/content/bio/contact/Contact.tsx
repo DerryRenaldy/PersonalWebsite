@@ -2,7 +2,7 @@ import image from "@assets/images";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col p-6 gap-y-4 font-rubik h-full">
+    <div className="flex flex-col p-6 gap-y-4 font-rubik h-full border-solid border-2">
       <p className="text-left text-2xl">Contact</p>
       <div className="text-left gap-y-6 flex flex-col">
         <p>
