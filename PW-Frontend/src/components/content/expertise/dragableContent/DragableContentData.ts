@@ -11,13 +11,13 @@ type Data = {
   size: number;
 };
 
-export const MetaData: Data[] = [
+export const MetaDataLeft: Data[] = [
   {
     imageUrl: Image.jsLogo,
     alt: "Javascript",
     size: 130,
     initial: {
-      x: 490,
+      x: 390,
       y: 150,
     },
   },
@@ -26,7 +26,7 @@ export const MetaData: Data[] = [
     alt: "Typescript",
     size: 130,
     initial: {
-      x: 250,
+      x: 150,
       y: 320,
     },
   },
@@ -35,7 +35,7 @@ export const MetaData: Data[] = [
     alt: "Docker",
     size: 200,
     initial: {
-      x: 450,
+      x: 350,
       y: 420,
     },
   },
@@ -44,7 +44,7 @@ export const MetaData: Data[] = [
     alt: "Tailwind",
     size: 270,
     initial: {
-      x: 130,
+      x: 30,
       y: 580,
     },
   },
@@ -53,16 +53,19 @@ export const MetaData: Data[] = [
     alt: "Unity",
     size: 220,
     initial: {
-      x: 300,
+      x: 100,
       y: 750,
     },
   },
+];
+
+export const MetaDataRight: Data[] = [
   {
     imageUrl: Image.motionLogo,
     alt: "Motion",
     size: 120,
     initial: {
-      x: 1600,
+      x: 500,
       y: 180,
     },
   },
@@ -71,7 +74,7 @@ export const MetaData: Data[] = [
     alt: "React",
     size: 120,
     initial: {
-      x: 1300,
+      x: 200,
       y: 300,
     },
   },
@@ -80,7 +83,7 @@ export const MetaData: Data[] = [
     alt: "MYSQL",
     size: 150,
     initial: {
-      x: 1540,
+      x: 440,
       y: 360,
     },
   },
@@ -89,7 +92,7 @@ export const MetaData: Data[] = [
     alt: "Redis",
     size: 280,
     initial: {
-      x: 1200,
+      x: 100,
       y: 500,
     },
   },
@@ -98,7 +101,7 @@ export const MetaData: Data[] = [
     alt: "Golang",
     size: 150,
     initial: {
-      x: 1500,
+      x: 400,
       y: 630,
     },
   },

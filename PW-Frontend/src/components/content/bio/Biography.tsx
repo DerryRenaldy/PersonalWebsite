@@ -23,8 +23,7 @@ const Biography = () => {
   }, [isTopInView]);
 
   return (
-    <div ref={containerRef} className="pt-20">
-      {/* <Title title={"Biography"} /> */}
+    <div ref={containerRef} className="pt-36">
       <div className="relative">
         <div className="p-10">
           <div className="grid h-full grid-cols-5 gap-6 text-center text-white content-round">
