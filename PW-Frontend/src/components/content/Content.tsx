@@ -1,5 +1,5 @@
 import Biography from "./bio/Biography";
-import Testing from "./expertise/Testing";
+import Testing from "./expertise/softwareDevelopment/WebDevelopment";
 
 const Content = () => {
   return (

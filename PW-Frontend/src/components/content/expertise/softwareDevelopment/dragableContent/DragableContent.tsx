@@ -53,7 +53,7 @@ const DragableContent = ({
           console.log("Pointer Up");
           setIsGrabbing(false);
         }}
-        className={`pointer-events-auto ${
+        className={`pointer-events-auto filter blur-[3px] ${
           isGrabbing ? "cursor-grabbing" : "cursor-grab"
         }`}
       />

@@ -6,14 +6,14 @@ const NavigationButtons = () => {
   const { section } = useSectionContext();
 
   return (
-    <div className="relative flex flex-row justify-between px-2 py-2 rounded-2xl backdrop-blur bg-[#464646]/40 gap-x-10">
+    <div className="relative flex flex-row justify-between font-rubik px-2 py-2 rounded-2xl backdrop-blur bg-[#464646]/40 gap-x-10">
       <div className="text-[24px] font-extrabold uppercase ml-2 select-none">
         DR
       </div>
       <div className="mr-2 relative flex items-center text-sm font-bold text-[#575757] gap-x-4">
         {/* BUTTON 1 */}
         <motion.div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden font-semibold"
           variants={VariantsNavbar.hovered}
           whileHover="hover"
         >
@@ -34,7 +34,7 @@ const NavigationButtons = () => {
 
         {/* BUTTON 2 */}
         <motion.div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden font-semibold"
           variants={VariantsNavbar.hovered}
           whileHover="hover"
         >
@@ -55,7 +55,7 @@ const NavigationButtons = () => {
 
         {/* BUTTON 3 */}
         <motion.div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden font-semibold"
           variants={VariantsNavbar.hovered}
           whileHover="hover"
         >
@@ -73,7 +73,13 @@ const NavigationButtons = () => {
             <button className="select-none">Contacts</button>
           </motion.a>
         </motion.div>
-        <div className="text-white uppercase">{section}</div>
+        <motion.div
+          className="uppercase font-bold font-rubik tracking-widest text-[#C49B66]"
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+        >
+          -{section}-
+        </motion.div>
       </div>
     </div>
   );

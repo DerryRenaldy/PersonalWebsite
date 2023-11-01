@@ -4,15 +4,27 @@ import {
   MetaDataLeft,
   MetaDataRight,
 } from "./dragableContent/DragableContentData";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useIsTopInView from "components/hooks/useIsTopInView";
+import { useSectionContext } from "components/pages/Context";
 
 const Testing = () => {
-  const [isGrabbing, setIsGrabbing] = useState(false);
-  const [width, setWidth] = useState(window.screen.width);
+  const [isGrabbing, setIsGrabbing] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(window.screen.width);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isTopInView = useIsTopInView(containerRef);
+  const { setSection } = useSectionContext();
 
   const windowResizeHandler = () => {
     setWidth(window.screen.width);
   };
+
+  useEffect(() => {
+    if (isTopInView) {
+      setSection("Expertise");
+    }
+  }, [isTopInView]);
 
   useEffect(() => {
     window.addEventListener("resize", windowResizeHandler);
@@ -20,8 +32,8 @@ const Testing = () => {
   }, []);
 
   return (
-    <>
-      <div className="relative text-white overflow-auto flex justify-center items-center h-[100vh] w-[100vw]">
+    <div ref={containerRef} className="h-[200vh]">
+      <div className="sticky top-0 text-white overflow-auto flex justify-center items-center h-[100vh] w-[100vw]">
         <div
           className="absolute h-full"
           style={{ width: width, left: `calc(50% - ${width}px/2)` }}
@@ -35,8 +47,8 @@ const Testing = () => {
                     dragTransition={{ bounceStiffness: 600 }}
                     dragElastic={1}
                     onDrag={(_e: any, info: PanInfo) => {
-                      console.log("X: ", info.point.x);
-                      console.log("Y: ", info.point.y);
+                      // console.log("X: ", info.point.x);
+                      // console.log("Y: ", info.point.y);
                       document.body.style.overflow = "hidden";
                     }}
                     onDragEnd={() => {
@@ -63,9 +75,9 @@ const Testing = () => {
                     drag
                     dragTransition={{ bounceStiffness: 600 }}
                     dragElastic={1}
-                    onDrag={(_e: any, info: PanInfo) => {
-                      console.log("X: ", info.point.x);
-                      console.log("Y: ", info.point.y);
+                    onDragStart={(_e: any, _info: PanInfo) => {
+                      // console.log("X: ", info.point.x);
+                      // console.log("Y: ", info.point.y);
                       document.body.style.overflow = "hidden";
                     }}
                     onDragEnd={() => {
@@ -80,16 +92,18 @@ const Testing = () => {
                     }}
                     size={data.size}
                     setIsGrabbing={setIsGrabbing}
-                    key={i}
+                    key={i + 1}
                   />
                 );
               })}
             </div>
           </div>
         </div>
-        <h2 className="text-[60px] z-[10] font-rubik">Web Development</h2>
+        <h2 className="text-[60px] z-[10] font-rubik font-bold">
+          Software Development
+        </h2>
       </div>
-    </>
+    </div>
   );
 };
 

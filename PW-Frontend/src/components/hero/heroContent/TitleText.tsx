@@ -40,12 +40,12 @@ const TitleText = () => {
   return (
     <>
       <div>
-        <h1 className="select-none pointer-events-none text-3xl">
+        <h1 className="select-none pointer-events-none text-3xl font-rubik">
           Hello, I'm Derry!
         </h1>
       </div>
 
-      <div className="flex justify-center gap-x-2">
+      <div className="flex justify-center gap-x-2 font-rubik">
         {/* <h1 className="select-none pointer-events-none text-3xl">I'm a</h1> */}
         <motion.div
           initial={{ y: 0, opacity: 1 }}

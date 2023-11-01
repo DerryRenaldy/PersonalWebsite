@@ -9,6 +9,7 @@ type Data = {
   alt: string;
   initial: initial;
   size: number;
+  isBlur?: boolean;
 };
 
 export const MetaDataLeft: Data[] = [

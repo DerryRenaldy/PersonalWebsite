@@ -22,7 +22,7 @@ const CVButton = ({ isScrolled, buttonPos }: Props) => {
           }}
           layout
           animate={buttonPos}
-          className="relative text-sm flex items-center font-bold text-[#575757]"
+          className="relative text-sm flex items-center font-rubik font-semibold text-[#575757]"
         >
           <motion.div
             variants={VariantsNavbar.hovered}

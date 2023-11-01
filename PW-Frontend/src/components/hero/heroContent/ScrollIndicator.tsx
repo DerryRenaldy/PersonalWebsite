@@ -8,7 +8,7 @@ type Props = {
 const ScrollIndicator = ({ ImageURL, Control }: Props) => {
   return (
     <motion.div
-      className="absolute flex items-center justify-center text-sm text-white pointer-events-none right-10 bottom-10 font-nunito font-extralight"
+      className="absolute flex font-rubik items-center justify-center text-sm text-white pointer-events-none right-10 bottom-10 font-extralight"
       animate={Control}
     >
       <div>Scroll to explore</div>
