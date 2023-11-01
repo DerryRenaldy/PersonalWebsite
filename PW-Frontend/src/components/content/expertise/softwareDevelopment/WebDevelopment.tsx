@@ -46,7 +46,7 @@ const Testing = () => {
                     drag
                     dragTransition={{ bounceStiffness: 600 }}
                     dragElastic={1}
-                    onDrag={(_e: any, info: PanInfo) => {
+                    onDrag={(_e: any, _info: PanInfo) => {
                       // console.log("X: ", info.point.x);
                       // console.log("Y: ", info.point.y);
                       document.body.style.overflow = "hidden";
