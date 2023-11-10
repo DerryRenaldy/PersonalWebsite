@@ -1,6 +1,7 @@
 import { ModelingThumbnail } from "@assets/videoModeling";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Image from '@assets/images'
 
 interface VideoCardProps {
   title: string;
@@ -71,10 +72,16 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative"
+        className="relative rounded-2xl shadow-[rgba(255,_255,_255,_0.3)_0px_0px_16px]"
       >
+        <div className="absolute z-50 top-4 scale-150 pointer-events-none">
+          <img
+            src={Image.frame}
+            className="rounded-2xl"
+          />
+        </div>
         <motion.div
-          className="absolute z-30 rounded-2xl -translate-x-10 shadow-[rgba(255,_255,_255,_0.3)_0px_0px_16px]"
+          className="absolute z-30 rounded-2xl -translate-x-10 "
           animate={position}
           initial={{ rotate: -6 }}
         >
