@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { useEffect, useState } from "react";
 import NavigationButtons from "./sections/NavigationButtons";
 import CVButton from "./sections/CVButton";
+import clsx from "clsx";
 
 const updateScrollPosition = (
   setIsScrolled: React.Dispatch<React.SetStateAction<boolean>>
@@ -43,7 +44,12 @@ const Navbar = () => {
   }, [isScrolled]);
 
   return (
-    <header className="py-4 my-4 w-[50%] justify-center pointer-events-none text-white flex font-nunito fixed left-1/2 translate-x-[-50%] z-[1000]">
+    <header
+      className={clsx(
+        `justify-center pointer-events-none text-white flex font-nunito`,
+        `py-4 my-4 w-[50%] fixed left-1/2 translate-x-[-50%] z-[1000]`
+      )}
+    >
       <motion.div
         initial={false}
         layout="position"

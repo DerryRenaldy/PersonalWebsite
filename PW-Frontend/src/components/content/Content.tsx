@@ -1,11 +1,13 @@
 import Biography from "./bio/Biography";
-import Testing from "./expertise/softwareDevelopment/WebDevelopment";
+import Modeling3D from "./expertise/modeling3d/Modeling3D";
+import WebDevelopment from "./expertise/softwareDevelopment/WebDevelopment";
 
 const Content = () => {
   return (
     <>
       <Biography />
-      <Testing />
+      <WebDevelopment />
+      <Modeling3D />
     </>
   );
 };
