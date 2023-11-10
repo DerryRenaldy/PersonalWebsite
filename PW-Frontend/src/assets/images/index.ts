@@ -18,7 +18,6 @@ import gmail from "./contactLogo/gmail.png";
 import likedin from "./contactLogo/linkedin.png";
 import whatsapp from "./contactLogo/whatsapp.png";
 import lineArt from "./lineArt.png";
-import text from "./text.png";
 
 const Image = {
   arrowBlack,
@@ -41,7 +40,6 @@ const Image = {
   likedin,
   whatsapp,
   lineArt,
-  text,
 };
 
 export default Image;
