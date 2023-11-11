@@ -8,15 +8,15 @@ import pilar from "./pilar.mp4";
 import torso from "./torso.mp4";
 import skull from "./skull.mp4";
 
-import axeThumbnail from "./axe.png";
-import bullThumbnail from "./bull.png";
-import chetahThumbnail from "./chetah.png";
-import clickerThumbnail from "./clicker.png";
-import creatureThumbnail from "./creature.png";
-import helmetThumbnail from "./helmet.png";
-import pilarThumbnail from "./pilar.png";
-import skullThumbnail from "./skull.png";
-import torsoThumbnail from "./torso.png";
+import axeThumbnail from "./axe.jpg";
+import bullThumbnail from "./bull.jpg";
+import chetahThumbnail from "./chetah.jpg";
+import clickerThumbnail from "./clicker.jpg";
+import creatureThumbnail from "./creature.jpg";
+import helmetThumbnail from "./helmet.jpg";
+import pilarThumbnail from "./pilar.jpg";
+import skullThumbnail from "./skull.jpg";
+import torsoThumbnail from "./torso.jpg";
 
 import overlay from "./overlay.jpg";
 
