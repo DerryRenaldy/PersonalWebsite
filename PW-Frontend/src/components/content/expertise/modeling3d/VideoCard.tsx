@@ -1,7 +1,7 @@
 import { ModelingThumbnail } from "@assets/videoModeling";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Image from '@assets/images'
+import Image from "@assets/images";
 
 interface VideoCardProps {
   title: string;
@@ -77,7 +77,9 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
         <div className="absolute z-50 top-4 scale-150 pointer-events-none">
           <img
             src={Image.frame}
+            loading="lazy"
             className="rounded-2xl"
+            alt=""
           />
         </div>
         <motion.div
@@ -88,7 +90,9 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
           <div className="absolute">
             <img
               src={ModelingThumbnail.overlay}
+              loading="lazy"
               className="rounded-2xl mix-blend-multiply"
+              alt=""
             />
           </div>
           <div className="h-full flex items-end p-4 absolute w-full rounded-2xl z-20 bg-[#2d2d2d]/20 border-2 border-[#2d2d2d]">
@@ -102,7 +106,12 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
               </p>
             </div>
           </div>
-          <img src={thumbnailUrl} className="w-[300px] rounded-2xl" />
+          <img
+            src={thumbnailUrl}
+            className="w-[300px] rounded-2xl"
+            loading="lazy"
+            alt=""
+          />
         </motion.div>
         <motion.div
           className="h-full flex items-end p-4 absolute w-full rounded-2xl z-20 backdrop-blur bg-[#2d2d2d]/40"
@@ -110,6 +119,7 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
         ></motion.div>
         <video
           ref={videoRef}
+          preload="auto"
           className="relative z-10 w-[300px] rounded-2xl border-2 border-black/30"
           muted
         >

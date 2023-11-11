@@ -1,7 +1,13 @@
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
@@ -13,9 +19,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Model(props: JSX.IntrinsicElements["group"]) {
-  // const [clock] = useState(new THREE.Clock());
-  // const { nodes, materials } = useGLTF("/rock_2.glb") as GLTFResult;
+const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
   const { nodes, materials } = useMemo(() => {
     return useGLTF("/rock_2.glb") as GLTFResult;
   }, []);
@@ -44,12 +48,12 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    if (scrollDirection == "up") {
+    if (scrollDirection === "up") {
       meshRef.current.rotation.y += 0.006;
       meshRocks.forEach((meshRock) => {
         meshRock.current.rotation.x += 0.04;
       });
-    } else if (scrollDirection == "down") {
+    } else if (scrollDirection === "down") {
       meshRef.current.rotation.y -= 0.006;
       meshRocks.forEach((meshRock) => {
         meshRock.current.rotation.x -= 0.04;
@@ -73,15 +77,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
     setPrevScrollPos(currentScrollPos);
   };
 
-  useFrame(() => {
-    // state.ready = false;
-    // const timeUntilNextFrame = 1000 / 100 - clock.getDelta();
-
-    // setTimeout(() => {
-    //   state.ready = true;
-    //   state.invalidate();
-    // }, Math.max(0, timeUntilNextFrame));
-
+  const updateRockPosition = useCallback(() => {
     meshRef.current.rotation.y += 0.0005;
 
     meshRock1.current.rotation.y -= 0.0008;
@@ -107,6 +103,10 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
     meshRock6.current.rotation.y += 0.0007;
     meshRock6.current.rotation.x -= 0.0006;
     meshRock6.current.rotation.z += 0.0005;
+  }, []);
+
+  useFrame(() => {
+    updateRockPosition();
   });
 
   return (
@@ -179,6 +179,8 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       />
     </group>
   );
-}
+});
 
 useGLTF.preload("/rock_2.glb");
+
+export default Model;

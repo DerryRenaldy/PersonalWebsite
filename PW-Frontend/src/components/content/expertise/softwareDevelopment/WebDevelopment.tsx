@@ -28,7 +28,10 @@ const Testing = () => {
 
   useEffect(() => {
     window.addEventListener("resize", windowResizeHandler);
-    console.log("Width : ", width);
+
+    return () => {
+      window.removeEventListener("resize", windowResizeHandler);
+    };
   }, []);
 
   return (

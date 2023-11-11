@@ -1,10 +1,10 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Model } from "components/3dContent/rocks/Model";
-import { useRef } from "react";
+import Model from "components/3dContent/rocks/Model";
+import React, { useCallback, useRef } from "react";
 import * as THREE from "three";
 
-const Rock = () => {
+const Rock = React.memo(() => {
   const lightPosition = new THREE.Vector3();
   const pointLightRef = useRef<THREE.PointLight>(null!);
   // const movingLight = useRef<THREE.PointLight>(null!);
@@ -27,22 +27,29 @@ const Rock = () => {
   // const depthBuffer = useDepthBuffer({ frames: 1 });
   const viewport = useThree((state) => state.viewport);
 
+  const updateLightPosition = useCallback(
+    (state: { mouse: { y: number; x: number } }) => {
+      let z = -(state.mouse.y * viewport.height) / 2 - 2;
+
+      rectAreaLighRef.current.position.lerp(
+        lightPosition.set(
+          (state.mouse.x * viewport.width) / 2,
+          (state.mouse.y * viewport.height) / 2 + 0.8,
+          z
+        ),
+        0.1
+      );
+
+      // console.log("X : ", (state.mouse.x * viewport.width) / 2);
+      // console.log("Y : ", (state.mouse.y * viewport.height) / 2);
+      // console.log("Z : ", (state.mouse.y * viewport.height) / 2);
+      rectAreaLighRef.current.updateMatrixWorld();
+    },
+    []
+  );
+
   useFrame((state) => {
-    let z = -(state.mouse.y * viewport.height) / 2 - 2;
-
-    rectAreaLighRef.current.position.lerp(
-      lightPosition.set(
-        (state.mouse.x * viewport.width) / 2,
-        (state.mouse.y * viewport.height) / 2 + 0.8,
-        z
-      ),
-      0.1
-    );
-
-    // console.log("X : ", (state.mouse.x * viewport.width) / 2);
-    // console.log("Y : ", (state.mouse.y * viewport.height) / 2);
-    // console.log("Z : ", (state.mouse.y * viewport.height) / 2);
-    rectAreaLighRef.current.updateMatrixWorld();
+    updateLightPosition(state);
   });
 
   return (
@@ -83,6 +90,6 @@ const Rock = () => {
       <Model />
     </>
   );
-};
+});
 
 export default Rock;
