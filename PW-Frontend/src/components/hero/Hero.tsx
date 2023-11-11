@@ -72,7 +72,7 @@ const Hero = () => {
       <div>
         <RockModel />
       </div>
-      <div className="h-screen flex justify-center items-center z-[100]">
+      <div className="h-[100svh] flex justify-center items-center z-[100]">
         <div className="z-[100] pointer-events-none text-white font-nunito font-bold text-center flex flex-col gap-y-2">
           {/* <CVWebsite /> */}
           {/* <HoverIndicator ImageURL={Image.arrowWhite} Control={indicator} /> */}
