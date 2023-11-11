@@ -1,5 +1,6 @@
 import { AnimationControls, motion } from "framer-motion";
 import VariantsNavbar from "../variants";
+import clsx from "clsx";
 
 type Props = {
   isScrolled: boolean;
@@ -22,7 +23,10 @@ const CVButton = ({ isScrolled, buttonPos }: Props) => {
           }}
           layout
           animate={buttonPos}
-          className="relative text-sm flex items-center font-rubik font-semibold text-[#575757]"
+          className={clsx(
+            "relative text-sm sm:flex items-center font-rubik font-semibold text-[#575757]",
+            "hidden"
+          )}
         >
           <motion.div
             variants={VariantsNavbar.hovered}

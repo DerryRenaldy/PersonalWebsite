@@ -1,19 +1,17 @@
 import { Canvas } from "@react-three/fiber";
 import Rock from "./Rock";
-import { Stats } from "@react-three/drei";
-import { Perf } from "r3f-perf";
+// import { Stats } from "@react-three/drei";
+// import { Perf } from "r3f-perf";
 
 const RockModel = () => {
   return (
     <div className="h-full w-full z-[100] absolute pointer-events-none">
       <Canvas
-        // shadows
-        // dpr={dpr}
-
+        shadows
         camera={{ position: [-2, 2, 6], fov: 50, near: 1, far: 20 }}
         performance={{ min: 0.5 }}
+        // dpr={dpr}
       >
-        <Perf />
         {/* <fog attach="fog" args={["#202020", 5, 20]} /> */}
         {/* <ambientLight intensity={0.015} /> */}
         {/* <OrbitControls /> */}
@@ -21,7 +19,8 @@ const RockModel = () => {
           onIncline={() => setDpr(2)}
           onDecline={() => setDpr(1)}
         /> */}
-        <Stats />
+        {/* <Perf /> */}
+        {/* <Stats /> */}
         <Rock />
       </Canvas>
     </div>

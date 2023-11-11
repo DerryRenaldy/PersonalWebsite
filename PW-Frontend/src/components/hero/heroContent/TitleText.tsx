@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -40,7 +41,12 @@ const TitleText = () => {
   return (
     <>
       <div>
-        <h1 className="select-none pointer-events-none text-3xl font-rubik">
+        <h1
+          className={clsx(
+            "select-none pointer-events-none md:text-3xl font-rubik",
+            "text-sm"
+          )}
+        >
           Hello, I'm Derry!
         </h1>
       </div>
@@ -50,7 +56,10 @@ const TitleText = () => {
         <motion.div
           initial={{ y: 0, opacity: 1 }}
           animate={changeText}
-          className="text-[#C49B66] select-none pointer-events-none text-3xl"
+          className={clsx(
+            "text-[#C49B66] select-none pointer-events-none md:text-3xl",
+            "text-sm"
+          )}
         >
           {data[currentIndex]}
         </motion.div>

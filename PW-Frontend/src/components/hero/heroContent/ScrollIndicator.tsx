@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { AnimationControls, motion } from "framer-motion";
 
 type Props = {
@@ -8,13 +9,24 @@ type Props = {
 const ScrollIndicator = ({ ImageURL, Control }: Props) => {
   return (
     <motion.div
-      className="absolute flex font-rubik items-center justify-center text-sm text-white pointer-events-none right-10 bottom-10 font-extralight"
+      className={clsx(
+        "absolute flex font-rubik items-center justify-center md:text-sm text-white pointer-events-none md:right-10 md:bottom-10 font-extralight",
+        "right-6 bottom-6 text-xs"
+      )}
       animate={Control}
     >
       <div>Scroll to explore</div>
-      <div className="p-2 ml-2 bg-white border rounded-xl arrowContainer">
+      <div
+        className={clsx(
+          "md:p-2 ml-2 bg-white border md:rounded-xl arrowContainer",
+          "rounded-md p-1"
+        )}
+      >
         <img
-          className="w-[16px] h-[16px] arrowScroll"
+          className={clsx(
+            "md:w-[16px] md:h-[16px] arrowScroll",
+            "w-[12px] h-[12px]"
+          )}
           src={ImageURL}
           alt="scroll"
         />

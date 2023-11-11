@@ -1,16 +1,30 @@
 import { motion } from "framer-motion";
 import VariantsNavbar from "../variants";
-import { useSectionContext } from "components/pages/Context";
+import clsx from "clsx";
 
 const NavigationButtons = () => {
-  const { section } = useSectionContext();
-
   return (
-    <div className="relative flex flex-row justify-between font-rubik px-2 py-2 rounded-2xl backdrop-blur bg-[#464646]/40 gap-x-10">
-      <div className="text-[24px] font-extrabold uppercase ml-2 select-none">
+    <div
+      className={clsx(
+        "relative flex flex-row justify-between font-rubik p-2 rounded-2xl backdrop-blur bg-[#464646]/40",
+        "md:gap-x-10",
+        "gap-x-4"
+      )}
+    >
+      <div
+        className={clsx(
+          "md:text-[24px] font-extrabold uppercase ml-2 select-none",
+          "text-[18px]"
+        )}
+      >
         DR
       </div>
-      <div className="mr-2 relative flex items-center text-sm font-bold text-[#575757] gap-x-4">
+      <div
+        className={clsx(
+          "mr-2 relative flex items-center md:text-sm font-bold text-[#575757] md:gap-x-4",
+          "text-xs gap-x-2"
+        )}
+      >
         {/* BUTTON 1 */}
         <motion.div
           className="relative overflow-hidden font-semibold"
@@ -42,14 +56,14 @@ const NavigationButtons = () => {
             variants={VariantsNavbar.hoverButtonInactive}
             className="select-none"
           >
-            About
+            Biography
           </motion.button>
           <motion.a
             className="absolute left-0 text-white"
             initial={{ y: 12, opacity: 0 }}
             variants={VariantsNavbar.hoverButtonActive}
           >
-            <button className="select-none">About</button>
+            <button className="select-none">Biography</button>
           </motion.a>
         </motion.div>
 
@@ -63,22 +77,15 @@ const NavigationButtons = () => {
             variants={VariantsNavbar.hoverButtonInactive}
             className="select-none"
           >
-            Contacts
+            Expertise
           </motion.button>
           <motion.a
             className="absolute left-0 text-white"
             initial={{ y: 12, opacity: 0 }}
             variants={VariantsNavbar.hoverButtonActive}
           >
-            <button className="select-none">Contacts</button>
+            <button className="select-none">Expertise</button>
           </motion.a>
-        </motion.div>
-        <motion.div
-          className="uppercase font-bold font-rubik tracking-widest text-[#C49B66]"
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-        >
-          -{section}-
         </motion.div>
       </div>
     </div>

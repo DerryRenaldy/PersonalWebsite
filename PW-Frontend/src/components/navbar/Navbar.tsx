@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import NavigationButtons from "./sections/NavigationButtons";
 import CVButton from "./sections/CVButton";
 import clsx from "clsx";
+import { useSectionContext } from "components/pages/Context";
+import styled from "styled-components";
 
 const updateScrollPosition = (
   setIsScrolled: React.Dispatch<React.SetStateAction<boolean>>
@@ -29,6 +31,7 @@ const moveOpenCVButton = (
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const buttonPos = useAnimation();
+  const { section } = useSectionContext();
 
   useEffect(() => {
     moveOpenCVButton(isScrolled, buttonPos);
@@ -44,18 +47,11 @@ const Navbar = () => {
   }, [isScrolled]);
 
   return (
-    <header
-      className={clsx(
-        `justify-center pointer-events-none text-white flex font-nunito`,
-        `py-4 my-4 w-[50%] fixed left-1/2 translate-x-[-50%] z-[1000]`
-      )}
-    >
+    <header className="py-4 my-4 w-screen fixed z-[1000] justify-center items-center pointer-events-none text-white flex flex-col font-rubik">
       <motion.div
         initial={false}
         layout="position"
-        // transition={{ layout: { duration: 5 } }}
         className="pointer-events-auto gap-x-4 rounded-2xl"
-        // animate={{ boxShadow: "0px 10px 50px 2px #888888" }}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -66,8 +62,30 @@ const Navbar = () => {
         {/* BUTTON OPEN CV */}
         <CVButton isScrolled={isScrolled} buttonPos={buttonPos} />
       </motion.div>
+
+      <TitleText
+        className={clsx(
+          "uppercase p-2 m-2 font-bold w-fit tracking-widest text-center text-[#C49B66]",
+          "md:text-xl",
+          "text-sm"
+        )}
+        // animate={{ opacity: 1 }}
+        // initial={{ opacity: 0 }}
+      >
+        -{section}-
+      </TitleText>
     </header>
   );
 };
 
 export default Navbar;
+
+const TitleText = styled.div`
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+
+  &:hover {
+    -webkit-text-fill-color: initial;
+    -webkit-text-stroke-width: initial;
+  }
+`;

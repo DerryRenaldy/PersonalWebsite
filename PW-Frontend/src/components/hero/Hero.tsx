@@ -67,10 +67,12 @@ const Hero = () => {
   }, [isScrolled]);
 
   return (
-    <section ref={containerRef} className="relative">
+    <section ref={containerRef} className="relative overflow-scroll">
       {/* <div className="absolute top-0 bottom-0 left-0 right-0" ></div> */}
-      <RockModel />
-      <div className="hero-full flex justify-center items-center z-[100]">
+      <div>
+        <RockModel />
+      </div>
+      <div className="h-screen flex justify-center items-center z-[100]">
         <div className="z-[100] pointer-events-none text-white font-nunito font-bold text-center flex flex-col gap-y-2">
           {/* <CVWebsite /> */}
           {/* <HoverIndicator ImageURL={Image.arrowWhite} Control={indicator} /> */}

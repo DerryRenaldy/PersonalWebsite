@@ -8,7 +8,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -23,6 +23,25 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
   const { nodes, materials } = useMemo(() => {
     return useGLTF("/rock_2.glb") as GLTFResult;
   }, []);
+
+  const { viewport } = useThree();
+  const aspect = viewport.width / viewport.height;
+
+  // Calculate a scale factor based on the viewport size
+  const scaleFactor = useMemo(() => {
+    // Adjust this value based on your needs
+    const baseScale = 1;
+    const scale = Math.min(1, aspect) * baseScale;
+    console.log(scale);
+    return scale;
+  }, [aspect]);
+
+  const positionFactor = useMemo(() => {
+    const basePosition = new THREE.Vector3(0, 0.2, -5);
+    return aspect > 1
+      ? basePosition
+      : new THREE.Vector3(basePosition.x, basePosition.y - 0.2, basePosition.z);
+  }, [aspect]);
 
   const [prevScrollPos, setPrevScrollPos] = useState<number>(window.scrollY);
   const [scrollDirection, setScrollDirection] = useState<
@@ -114,8 +133,9 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
       {...props}
       dispose={null}
       ref={meshRef}
-      position={[0, 0.2, -5]}
+      position={positionFactor}
       rotation={[0.35, 0, 0]}
+      scale={scaleFactor}
     >
       <mesh
         ref={meshRock1}
