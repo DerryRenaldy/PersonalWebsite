@@ -67,7 +67,7 @@ const Hero = () => {
   }, [isScrolled]);
 
   return (
-    <section ref={containerRef} className="relative overflow-scroll">
+    <section ref={containerRef} className="relative">
       {/* <div className="absolute top-0 bottom-0 left-0 right-0" ></div> */}
       <div>
         <RockModel />

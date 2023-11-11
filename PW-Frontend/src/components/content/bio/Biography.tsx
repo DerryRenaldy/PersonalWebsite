@@ -10,6 +10,7 @@ import Introduction from "./introduction/Introduction";
 import { useSectionContext } from "components/pages/Context";
 import { useEffect, useRef } from "react";
 import useIsTopInView from "components/hooks/useIsTopInView";
+import clsx from "clsx";
 
 const Biography = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,10 +24,16 @@ const Biography = () => {
   }, [isTopInView]);
 
   return (
-    <div ref={containerRef} className="pt-36">
+    <div ref={containerRef} className={clsx("md:pt-36", "pt-0")}>
       <div className="relative">
-        <div className="p-10">
-          <div className="grid h-full grid-cols-5 gap-6 text-center text-white content-round">
+        <div className={clsx("md:p-10", "p-4")}>
+          <div
+            className={clsx(
+              "h-full grid-cols-5 gap-6 text-center text-white content-round",
+              "md:grid",
+              "flex flex-col"
+            )}
+          >
             {/* FIRST SECTION */}
             <div className="col-span-3 bg-secondary">
               <Introduction />
