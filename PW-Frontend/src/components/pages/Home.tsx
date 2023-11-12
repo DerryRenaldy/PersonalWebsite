@@ -9,11 +9,9 @@ import clsx from "clsx";
 const Home = () => {
   const [section, setSection] = useState<string | null>("Home");
   const [isScrolledCtx, setIsScrolledCtx] = useState<boolean>(false);
-
   return (
     <>
       <div className="noise" />
-
       <div className={clsx("md:block", "hidden")}>
         <CustomScrollbar />
       </div>

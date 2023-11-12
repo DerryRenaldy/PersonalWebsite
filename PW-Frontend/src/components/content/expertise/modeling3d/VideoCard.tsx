@@ -110,7 +110,7 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
           <img
             src={thumbnailUrl}
             className={clsx(" rounded-2xl", "md:w-[300px]", "w-[200px]")}
-            // loading="lazy"
+            loading="lazy"
             alt=""
           />
         </motion.div>
@@ -120,7 +120,7 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
         ></motion.div>
         <video
           ref={videoRef}
-          preload="auto"
+          preload="metadata"
           className={clsx(
             "relative z-10 rounded-2xl",
             "md:w-[300px]",
