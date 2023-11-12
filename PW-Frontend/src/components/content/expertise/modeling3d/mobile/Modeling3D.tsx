@@ -22,7 +22,7 @@ import { ModelingThumbnail } from "@assets/videoModeling/mobile";
 
 const Modeling3D = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isTopInView = useIsTopInView(containerRef);
+  const isTopInView = useIsTopInView(containerRef, "Expertise - 3d mobile");
   const { setSection } = useSectionContext();
 
   useEffect(() => {

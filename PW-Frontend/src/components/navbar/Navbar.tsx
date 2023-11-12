@@ -48,8 +48,24 @@ const Navbar = () => {
   return (
     <header
       ref={ref}
-      className="py-4 my-4 w-screen fixed z-[1000] justify-center items-center pointer-events-none text-white flex flex-col font-rubik"
+      className={clsx(
+        "gap-y-4 w-screen fixed z-[1000] justify-center items-center pointer-events-none text-white flex flex-col font-rubik",
+        "md:p-6",
+        "pb-4"
+      )}
     >
+      <TitleText
+        className={clsx(
+          "py-1 px-10 rounded-b-lg pointer-events-auto backdrop-blur bg-[#2a2a2a]/50 font-bold tracking-widest text-center text-[#C49B66]",
+          "md:text-lg md:absolute md:left-0 md:[writing-mode:vertical-lr] md:px-1 md:py-10 md:top-10 md:rounded-lg",
+          "text-sm rounded-b-lg"
+        )}
+        // animate={{ opacity: 1 }}
+        // initial={{ opacity: 0 }}
+      >
+        {section}
+      </TitleText>
+
       <motion.div
         initial={false}
         layout="position"
@@ -64,18 +80,6 @@ const Navbar = () => {
         {/* BUTTON OPEN CV */}
         <CVButton isScrolled={isScrolledCtx} buttonPos={buttonPos} />
       </motion.div>
-
-      <TitleText
-        className={clsx(
-          "uppercase p-2 m-2 font-bold w-fit tracking-widest text-center text-[#C49B66]",
-          "md:text-xl",
-          "text-sm"
-        )}
-        // animate={{ opacity: 1 }}
-        // initial={{ opacity: 0 }}
-      >
-        -{section}-
-      </TitleText>
     </header>
   );
 };
@@ -83,11 +87,11 @@ const Navbar = () => {
 export default Navbar;
 
 const TitleText = styled.div`
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
 
   &:hover {
     -webkit-text-fill-color: initial;
     -webkit-text-stroke-width: initial;
-  }
+  } */
 `;

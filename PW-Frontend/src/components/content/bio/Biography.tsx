@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 const Biography = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isTopInView = useIsTopInView(containerRef);
+  const isTopInView = useIsTopInView(containerRef, "Biography");
   const { setSection } = useSectionContext();
 
   useEffect(() => {

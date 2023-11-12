@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Rock from "./Rock";
-import { Stats } from "@react-three/drei";
+// import { Stats } from "@react-three/drei";
 // import { Perf } from "r3f-perf";
 
 const RockModel = () => {
@@ -20,7 +20,7 @@ const RockModel = () => {
           onDecline={() => setDpr(1)}
         /> */}
         {/* <Perf /> */}
-        <Stats />
+        {/* <Stats /> */}
         <Rock />
       </Canvas>
     </div>

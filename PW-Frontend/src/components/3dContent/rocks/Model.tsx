@@ -28,7 +28,7 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
   const aspect = viewport.width / viewport.height;
 
   // Check if it's a mobile device based on viewport width
-  const isMobile = viewport.width < 768;
+  // const isMobile = viewport.width < 768;
 
   // Calculate a scale factor based on the viewport size
   const scaleFactor = useMemo(() => {
@@ -67,9 +67,9 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
   ];
 
   useEffect(() => {
-    if (!isMobile) {
-      window.addEventListener("scroll", handleScroll);
-    }
+    // if (!isMobile) {
+    // }
+    window.addEventListener("scroll", handleScroll);
 
     if (scrollDirection === "up") {
       meshRef.current.rotation.y += 0.006;
@@ -84,11 +84,11 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
     }
 
     return () => {
-      if (!isMobile) {
-        window.removeEventListener("scroll", handleScroll);
-      }
+      // if (!isMobile) {
+      // }
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos, isMobile]);
+  }, [prevScrollPos]);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;

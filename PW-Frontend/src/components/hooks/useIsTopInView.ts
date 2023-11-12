@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useIsTopInView = (ref: any) => {
+const useIsTopInView = (ref: any, _section: string) => {
   const [isTopInView, setIsTopInView] = useState(false);
 
   const checkIsTopInView = () => {
@@ -8,7 +8,7 @@ const useIsTopInView = (ref: any) => {
       const rect = ref.current.getBoundingClientRect();
       // console.log(rect.top);
       // console.log(rect.bottom);
-      setIsTopInView(rect.top <= 0 && rect.bottom >= 0);
+      setIsTopInView(rect.top <= 0 && rect.bottom > 0);
     }
   };
 
@@ -16,6 +16,7 @@ const useIsTopInView = (ref: any) => {
     const handleScroll = () => {
       checkIsTopInView();
     };
+    // console.log(section);
 
     // Attach the scroll event listener
     window.addEventListener("scroll", handleScroll);

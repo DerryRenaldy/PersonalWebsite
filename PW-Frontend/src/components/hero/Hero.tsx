@@ -16,7 +16,7 @@ const Hero = () => {
   const indicator = useAnimation();
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const isTopInView = useIsTopInView(containerRef);
+  const isTopInView = useIsTopInView(containerRef, "Home");
   const { setSection, setIsScrolledCtx } = useSectionContext();
 
   useEffect(() => {

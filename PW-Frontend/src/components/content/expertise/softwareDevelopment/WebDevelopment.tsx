@@ -13,7 +13,7 @@ const Testing = () => {
   const [width, setWidth] = useState<number>(window.screen.width);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const isTopInView = useIsTopInView(containerRef);
+  const isTopInView = useIsTopInView(containerRef, "Expertise - Web");
   const { setSection } = useSectionContext();
 
   const windowResizeHandler = () => {
