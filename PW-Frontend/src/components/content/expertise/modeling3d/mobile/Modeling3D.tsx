@@ -3,7 +3,8 @@ import { useSectionContext } from "components/pages/Context";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import VideoCard from "../VideoCard";
-import ModelingVideo, { ModelingThumbnail } from "@assets/videoModeling";
+import ModelingVideo from "@assets/videoModeling";
+import { ModelingThumbnail } from "@assets/videoModeling/mobile";
 // const presenceVariant = {
 //   initial: {
 //     opacity: 0,

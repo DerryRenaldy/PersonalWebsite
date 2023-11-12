@@ -1,25 +1,26 @@
-import ModelingVideo, { ModelingThumbnail } from "@assets/videoModeling";
+import ModelingVideo from "@assets/videoModeling";
 import VideoCard from "../VideoCard";
 import { motion } from "framer-motion";
 import Image from "@assets/images";
 import { useEffect, useRef, useState } from "react";
 import useIsTopInView from "components/hooks/useIsTopInView";
 import { useSectionContext } from "components/pages/Context";
+import { ModelingThumbnail } from "@assets/videoModeling/mobile";
 
-const presenceVariant = {
-  initial: {
-    opacity: 0,
-    x: -40,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.5,
-      duration: 1,
-    },
-  },
-};
+// const presenceVariant = {
+//   initial: {
+//     opacity: 0,
+//     x: -40,
+//   },
+//   animate: {
+//     opacity: 1,
+//     x: 0,
+//     transition: {
+//       delay: 0.5,
+//       duration: 1,
+//     },
+//   },
+// };
 
 const Modeling3D = () => {
   const [width, setWidth] = useState<number>(window.screen.width);
@@ -73,10 +74,10 @@ const Modeling3D = () => {
         <div className="flex gap-x-2 justify-center items-center">
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.axe}
@@ -87,10 +88,10 @@ const Modeling3D = () => {
           <div className="w-[300px] h-[400px]"></div>
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.bull}
@@ -109,10 +110,10 @@ const Modeling3D = () => {
         <div className="flex gap-x-2 justify-center items-center">
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.cheetah}
@@ -123,10 +124,10 @@ const Modeling3D = () => {
           <div className="w-[300px] h-[400px]"></div>
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.helmet}
@@ -145,10 +146,10 @@ const Modeling3D = () => {
         <div className="flex gap-x-2 justify-center items-center">
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.pilar}
@@ -159,10 +160,10 @@ const Modeling3D = () => {
           <div className="w-[300px] h-[400px]"></div>
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.skull}
@@ -181,10 +182,10 @@ const Modeling3D = () => {
         <div className="flex gap-x-2 justify-center items-center">
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.torso}
@@ -195,10 +196,10 @@ const Modeling3D = () => {
           <div className="w-[300px] h-[400px]"></div>
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.creature}
@@ -217,10 +218,10 @@ const Modeling3D = () => {
         <div className="flex gap-x-2 justify-center items-center">
           <motion.div
             className="rounded-2xl"
-            variants={presenceVariant}
-            whileInView="animate"
-            initial="initial"
-            viewport={{ once: true }}
+            // variants={presenceVariant}
+            // whileInView="animate"
+            // initial="initial"
+            // viewport={{ once: true }}
           >
             <VideoCard
               videoUrl={ModelingVideo.clicker}
