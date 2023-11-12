@@ -7,9 +7,9 @@ const RockModel = () => {
   return (
     <div className="h-full w-full z-[100] absolute pointer-events-none">
       <Canvas
-        shadows
+        // shadows
         camera={{ position: [-2, 2, 6], fov: 50, near: 1, far: 20 }}
-        performance={{ min: 0.5 }}
+        // performance={{ min: 0.5 }}
         // dpr={dpr}
       >
         {/* <fog attach="fog" args={["#202020", 5, 20]} /> */}

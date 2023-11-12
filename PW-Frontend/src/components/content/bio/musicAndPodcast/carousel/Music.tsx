@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import { MusicMetaData } from "../data";
 import "./Music.css";
+import { Suspense } from "react";
 
 const Music = () => {
   const sliderSettings = {
@@ -52,17 +53,19 @@ const Music = () => {
       <Slider {...sliderSettings}>
         {MusicMetaData.map((data, i) => (
           <div key={i}>
-            <iframe
-              className="scale-90 md:scale-100"
-              style={{ borderRadius: "12px" }}
-              src={data.source}
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+            <Suspense fallback={<div className="text-white">Loading</div>}>
+              <iframe
+                className="scale-90 md:scale-100"
+                style={{ borderRadius: "12px" }}
+                src={data.source}
+                width="100%"
+                height="152"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </Suspense>
           </div>
         ))}
       </Slider>
