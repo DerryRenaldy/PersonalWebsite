@@ -2,6 +2,7 @@ import { ModelingThumbnail } from "@assets/videoModeling";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Image from "@assets/images";
+import clsx from "clsx";
 
 interface VideoCardProps {
   title: string;
@@ -72,7 +73,11 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative rounded-2xl shadow-[rgba(255,_255,_255,_0.3)_0px_0px_16px]"
+        className={clsx(
+          "relative rounded-2xl shadow-[rgba(255,_255,_255,_0.3)_0px_0px_16px]",
+          "md:w-[300px]",
+          "w-[200px]"
+        )}
       >
         <div className="absolute z-50 top-4 scale-150 pointer-events-none">
           <img
@@ -100,15 +105,11 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
               <p className="font-rubik text-xl font-semibold text-white">
                 {title}
               </p>
-              <p className="font-rubik font-light text-sm text-white">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, necessitatibus nihil!
-              </p>
             </div>
           </div>
           <img
             src={thumbnailUrl}
-            className="w-[300px] rounded-2xl"
+            className={clsx(" rounded-2xl", "md:w-[300px]", "w-[200px]")}
             loading="lazy"
             alt=""
           />
@@ -119,8 +120,12 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
         ></motion.div>
         <video
           ref={videoRef}
-          preload="auto"
-          className="relative z-10 w-[300px] rounded-2xl border-2 border-black/30"
+          preload="metadata"
+          className={clsx(
+            "relative z-10 rounded-2xl",
+            "md:w-[300px]",
+            "w-[200px]"
+          )}
           muted
         >
           <source src={videoUrl} type="video/mp4" className="border" />

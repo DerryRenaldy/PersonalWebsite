@@ -53,6 +53,7 @@ const Music = () => {
         {MusicMetaData.map((data, i) => (
           <div key={i}>
             <iframe
+              className="scale-90 md:scale-100"
               style={{ borderRadius: "12px" }}
               src={data.source}
               width="100%"

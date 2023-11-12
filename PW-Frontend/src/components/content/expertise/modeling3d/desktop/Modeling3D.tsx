@@ -1,5 +1,5 @@
 import ModelingVideo, { ModelingThumbnail } from "@assets/videoModeling";
-import VideoCard from "./VideoCard";
+import VideoCard from "../VideoCard";
 import { motion } from "framer-motion";
 import Image from "@assets/images";
 import { useEffect, useRef, useState } from "react";

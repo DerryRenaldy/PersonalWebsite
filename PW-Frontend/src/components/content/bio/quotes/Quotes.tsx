@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import QuotesContent from "./QuotesContent";
 import { motion, useAnimation } from "framer-motion";
+import clsx from "clsx";
 
 const Quotes = () => {
   const containerOverflowRef = useRef<HTMLDivElement>(null);
@@ -46,7 +47,9 @@ const Quotes = () => {
             isOverflowing ? "h-fit" : "h-full"
           }`}
         >
-          <div className="text-2xl text-left">Quotes</div>
+          <div className={clsx("text-left", "md:text-2xl", "text-xl")}>
+            Quotes
+          </div>
           <div className="grow">
             <QuotesContent getText={getTextState} />
           </div>

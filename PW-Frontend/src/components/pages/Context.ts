@@ -3,6 +3,8 @@ import React, { createContext, useContext } from "react";
 interface ISectionContextValue {
   section: string | null;
   setSection: React.Dispatch<React.SetStateAction<string | null>>;
+  isScrolledCtx: boolean;
+  setIsScrolledCtx: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // Create the context with an initial empty object of type MyContextData

@@ -1,9 +1,10 @@
 import image from "@assets/images";
+import clsx from "clsx";
 
 const Contact = () => {
   return (
     <div className="flex flex-col p-6 gap-y-4 font-rubik h-full border-solid border-2">
-      <p className="text-left text-2xl">Contact</p>
+      <p className={clsx("text-left", "md:text-2xl", "text-xl")}>Contact</p>
       <div className="text-left gap-y-6 flex flex-col">
         <p>
           An opportunity? A piece of advice? Good things come to those who don't

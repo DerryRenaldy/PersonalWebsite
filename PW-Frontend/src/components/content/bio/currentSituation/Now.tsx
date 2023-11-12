@@ -1,7 +1,9 @@
+import clsx from "clsx";
+
 const Now = () => {
   return (
     <div className="flex flex-col p-6 gap-y-4 font-rubik h-full">
-      <p className="text-left text-2xl">/Now</p>
+      <p className={clsx("text-left", "md:text-2xl", "text-xl")}>/Now</p>
       <div className="text-left flex flex-col gap-y-4">
         <p>
           I'm working at a software company in Bandung as a contract employee.

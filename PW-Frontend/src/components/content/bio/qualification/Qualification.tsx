@@ -1,13 +1,22 @@
 import image from "@assets/images";
+import clsx from "clsx";
 
 const Qualification = () => {
   return (
     <div className="flex flex-col p-6 gap-y-4 font-rubik h-full">
-      <p className="text-left text-2xl">Qualification</p>
-      <div className="flex gap-x-6">
+      <p className={clsx("text-left", "md:text-2xl", "text-xl")}>
+        Qualification
+      </p>
+      <div
+        className={clsx("flex", "md:flex-row md:gap-x-6", "flex-col gap-y-6")}
+      >
         <img
           src={image.collage}
-          className="rounded-2xl object-cover w-[252px] h-[187px]"
+          className={clsx(
+            "rounded-2xl object-cover aspects-ratio",
+            "md:w-[280px]",
+            "w-full"
+          )}
         />
         <div className="text-left gap-y-4 flex flex-col">
           <p className="text-lg">Bachelor of Electrical Engineering</p>
