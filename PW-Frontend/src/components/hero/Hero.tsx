@@ -6,7 +6,7 @@ import TitleText from "./heroContent/TitleText";
 import ScrollIndicator from "./heroContent/ScrollIndicator";
 import { useSectionContext } from "components/pages/Context";
 import useIsTopInView from "components/hooks/useIsTopInView";
-import RockModel from "./heroContent/rockModel3d/RockModel";
+// import RockModel from "./heroContent/rockModel3d/RockModel";
 
 // ================ MAIN COMPONENT ================
 
