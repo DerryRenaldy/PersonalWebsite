@@ -17,7 +17,6 @@ import building from "./building.png";
 import gmail from "./contactLogo/gmail.png";
 import likedin from "./contactLogo/linkedin.png";
 import whatsapp from "./contactLogo/whatsapp.png";
-import lineArt from "./lineArt.png";
 import doodle from "./doodle.png";
 import frame from "./frame.png";
 import loadingCircle from "./bouncing-circles.svg";
@@ -42,7 +41,6 @@ const Image = {
   gmail,
   likedin,
   whatsapp,
-  lineArt,
   doodle,
   frame,
   loadingCircle,
