@@ -11,7 +11,7 @@ const Home = () => {
   const [isScrolledCtx, setIsScrolledCtx] = useState<boolean>(false);
   return (
     <>
-      <div className="noise" />
+      {/* <div className="noise" /> */}
       <div className={clsx("md:block", "hidden")}>
         <CustomScrollbar />
       </div>
