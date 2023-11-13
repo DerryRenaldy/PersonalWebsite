@@ -1,7 +1,8 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-const Home = lazy(() => import("components/pages/Home.tsx"));
 import Image from "@assets/images";
+
+const Home = lazy(() => import("components/pages/Home.tsx"));
 
 function App() {
   return (
