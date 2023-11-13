@@ -16,14 +16,6 @@ const MusicAndPodcast = () => {
           </p>
           <Music />
         </div>
-        {/* <div>
-          <p className="text-left pb-2">
-            Press play and set sail on a voyage of intellect. This podcast is
-            your ship, navigating the vast ocean of ideas, exploring uncharted
-            territories with every episode.
-          </p>
-          <Podcast />
-        </div> */}
       </div>
     </div>
   );

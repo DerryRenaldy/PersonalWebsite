@@ -20,6 +20,7 @@ import whatsapp from "./contactLogo/whatsapp.png";
 import doodle from "./doodle.png";
 import frame from "./frame.png";
 import loadingCircle from "./bouncing-circles.svg";
+import loading from "./loading.svg";
 
 const Image = {
   arrowBlack,
@@ -44,6 +45,7 @@ const Image = {
   doodle,
   frame,
   loadingCircle,
+  loading,
 };
 
 export default Image;

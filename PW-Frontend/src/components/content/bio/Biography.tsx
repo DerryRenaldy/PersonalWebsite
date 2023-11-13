@@ -1,4 +1,4 @@
-// import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
+import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
 import Quotes from "./quotes/Quotes";
 import MissionAndGoal from "./missionAndGoal/MissionAndGoal";
 import Now from "./currentSituation/Now";
@@ -8,8 +8,9 @@ import Skills from "./skills/Skills";
 import Contact from "./contact/Contact";
 import Introduction from "./introduction/Introduction";
 import { useSectionContext } from "components/pages/Context";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import useIsTopInView from "components/hooks/useIsTopInView";
+import Image from "@assets/images";
 import clsx from "clsx";
 
 const Biography = () => {
@@ -38,9 +39,17 @@ const Biography = () => {
             <div className="col-span-3 bg-secondary">
               <Introduction />
             </div>
-            {/* <div className="col-span-2 bg-secondary">
-              <MusicAndPodcast />
-            </div> */}
+            <div className="col-span-2 bg-secondary">
+              <Suspense
+                fallback={
+                  <div className="h-full flex flex-col justify-center items-center">
+                    <img src={Image.loading} />
+                  </div>
+                }
+              >
+                <MusicAndPodcast />
+              </Suspense>
+            </div>
             {/* SECOND SECTION */}
             <div className={clsx("md:block", "hidden")}></div>
             <div className="bg-secondary">
