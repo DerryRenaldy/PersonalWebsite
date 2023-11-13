@@ -1,14 +1,14 @@
 import { ModelingThumbnail } from "@assets/videoModeling/mobile";
 import { ModelingVideo } from "@assets/videoModeling";
 
-export interface IModelingExpertiseData {
+interface IModelingExpertiseData {
   thumbnailUrl: string;
   videoUrl: string;
   key: string;
   title: string;
 }
 
-export interface IModelingExpertiseDataDesktop {
+interface IModelingExpertiseDataDesktop {
   first: IModelingExpertiseData;
   second?: IModelingExpertiseData;
 }

@@ -7,7 +7,9 @@ import { Suspense, lazy, useState } from "react";
 import clsx from "clsx";
 import Image from "@assets/images";
 
-const Content = lazy(() => import("components/content/Content"));
+const Content = lazy(() =>
+  wait(200).then(() => import("components/content/Content"))
+);
 
 const Home = () => {
   const [section, setSection] = useState<string | null>("Home");
@@ -37,5 +39,11 @@ const Home = () => {
     </>
   );
 };
+
+function wait(time: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}
 
 export default Home;
