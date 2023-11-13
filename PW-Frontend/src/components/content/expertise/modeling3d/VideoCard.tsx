@@ -16,6 +16,7 @@ const VideoCard = React.memo(
     const videoRef = useRef<HTMLVideoElement>(null);
     const opacity = useAnimation();
     const position = useAnimation();
+    const videoElement = videoRef.current;
 
     const handleMouseEnter = () => {
       const videoElement = videoRef.current;
@@ -56,8 +57,6 @@ const VideoCard = React.memo(
           }
         }
       };
-
-      const videoElement = videoRef.current;
 
       if (videoElement) {
         videoElement.addEventListener("timeupdate", handleTimeUpdate, false);

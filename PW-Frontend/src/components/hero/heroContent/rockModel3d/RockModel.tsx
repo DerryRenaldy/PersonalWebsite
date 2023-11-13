@@ -1,9 +1,11 @@
 import { Canvas } from "@react-three/fiber";
-import Rock from "./Rock";
-import { Suspense, useState } from "react";
+// import Rock from "./Rock";
+import { Suspense, lazy, useState } from "react";
 import { Loader, PerformanceMonitor } from "@react-three/drei";
 // import { Stats } from "@react-three/drei";
 // import { Perf } from "r3f-perf";
+
+const Rock = lazy(() => import("./Rock"));
 
 const RockModel = () => {
   const [dpr, setDpr] = useState(0.6);
