@@ -80,12 +80,7 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
         )}
       >
         <div className="absolute z-50 top-4 scale-150 pointer-events-none">
-          <img
-            src={Image.frame}
-            loading="lazy"
-            className="rounded-2xl"
-            alt=""
-          />
+          <img src={Image.frame} className="rounded-2xl" alt="" />
         </div>
         <motion.div
           className="absolute z-30 rounded-2xl -translate-x-10 "
@@ -95,7 +90,6 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
           <div className="absolute">
             <img
               src={ModelingThumbnail.overlay}
-              loading="lazy"
               className="rounded-2xl mix-blend-multiply"
               alt=""
             />
@@ -110,7 +104,6 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
           <img
             src={thumbnailUrl}
             className={clsx(" rounded-2xl", "md:w-[300px]", "w-[200px]")}
-            loading="lazy"
             alt=""
           />
         </motion.div>
@@ -120,7 +113,7 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
         ></motion.div>
         <video
           ref={videoRef}
-          preload="metadata"
+          preload="auto"
           className={clsx(
             "relative z-10 rounded-2xl",
             "md:w-[300px]",
