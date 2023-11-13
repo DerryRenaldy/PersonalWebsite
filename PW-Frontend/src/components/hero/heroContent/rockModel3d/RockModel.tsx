@@ -3,7 +3,7 @@ import Rock from "./Rock";
 import { Suspense, useState } from "react";
 import { Loader, PerformanceMonitor } from "@react-three/drei";
 // import { Stats } from "@react-three/drei";
-// import { Perf } from "r3f-perf";
+import { Perf } from "r3f-perf";
 
 const RockModel = () => {
   const [dpr, setDpr] = useState(0.6);
@@ -18,7 +18,7 @@ const RockModel = () => {
         {/* <fog attach="fog" args={["#202020", 5, 20]} /> */}
         {/* <ambientLight intensity={0.015} /> */}
         {/* <OrbitControls /> */}
-        {/* <Perf /> */}
+        <Perf />
         {/* <Stats /> */}
         <PerformanceMonitor
           onIncline={() => setDpr(1)}
