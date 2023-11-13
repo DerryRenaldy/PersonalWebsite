@@ -134,10 +134,22 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
     updateRockPosition();
   });
 
+  // Add a cleanup function to dispose of geometries and materials
+  const cleanup = () => {
+    meshRocks.forEach((meshRock) => {
+      if (meshRock.current) {
+        const geometry = meshRock.current.geometry;
+
+        // Dispose of the geometry and material
+        geometry.dispose();
+      }
+    });
+  };
+
   return (
     <group
       {...props}
-      dispose={null}
+      dispose={cleanup}
       ref={meshRef}
       position={positionFactor}
       rotation={[0.35, 0, 0]}

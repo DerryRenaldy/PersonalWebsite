@@ -1,4 +1,3 @@
-import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
 import Quotes from "./quotes/Quotes";
 import MissionAndGoal from "./missionAndGoal/MissionAndGoal";
 import Now from "./currentSituation/Now";
@@ -12,6 +11,7 @@ import { Suspense, useEffect, useRef } from "react";
 import useIsTopInView from "components/hooks/useIsTopInView";
 import Image from "@assets/images";
 import clsx from "clsx";
+import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
 
 const Biography = () => {
   const containerRef = useRef<HTMLDivElement>(null);
