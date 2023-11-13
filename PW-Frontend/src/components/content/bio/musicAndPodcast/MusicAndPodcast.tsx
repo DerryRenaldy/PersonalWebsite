@@ -1,5 +1,14 @@
 import clsx from "clsx";
-import Music from "./carousel/Music";
+import Image from "@assets/images";
+import loadable from "@loadable/component";
+
+const Music = loadable(() => import("./carousel/Music"), {
+  fallback: (
+    <div className="flex justify-center items-center h-full">
+      <img src={Image.loading} className="w-10 h-10" />
+    </div>
+  ),
+});
 
 const MusicAndPodcast = () => {
   return (

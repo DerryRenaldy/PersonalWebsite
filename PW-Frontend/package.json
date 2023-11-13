@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@charlietango/use-native-lazy-loading": "^1.10.0",
+    "@loadable/component": "^5.15.3",
     "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.79.3",
     "@react-three/fiber": "^8.13.5",
     "@types/react-slick": "^0.23.11",
+    "@types/react-spinkit": "^3.0.10",
     "@types/three": "^0.154.0",
     "axios": "^1.5.0",
     "clsx": "^2.0.0",
@@ -35,6 +37,7 @@
     "react-loading-skeleton": "^3.3.1",
     "react-router-dom": "^6.15.0",
     "react-slick": "^0.29.0",
+    "react-spinkit": "^3.0.0",
     "styled-components": "^5.3.11",
     "three": "^0.154.0",
     "typewriter-effect": "^2.20.1",
@@ -42,6 +45,7 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
+    "@types/loadable__component": "^5.13.7",
     "@types/lodash": "^4.14.197",
     "@types/node": "^20.6.2",
     "@types/react": "^18.2.21",
