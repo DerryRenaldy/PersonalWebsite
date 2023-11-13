@@ -31,6 +31,12 @@ const Modeling3D = () => {
     };
   }, []);
 
+  useEffect(() => {
+    console.log("Component is mounted or re-rendered");
+  }, []);
+
+  console.log("Component is re-rendered");
+
   return (
     <div className="relative pt-48" ref={containerRef}>
       <div className="absolute h-[390svh] w-[100svw] -translate-y-24">
