@@ -35,7 +35,7 @@ const Testing = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[200vh]">
+    <div ref={containerRef} className="h-[200vh] mt-[250px]">
       <div className="sticky top-0 text-white overflow-auto flex justify-center items-center h-[100vh] w-[100vw]">
         <div
           className="absolute h-full"

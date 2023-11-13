@@ -33,7 +33,7 @@ const Modeling3D = () => {
 
   return (
     <div className="relative pt-48" ref={containerRef}>
-      <div className="absolute h-[380svh] w-[100svw] -translate-y-24">
+      <div className="absolute h-[280svh] w-[100svw] -translate-y-24">
         <div className="sticky top-6">
           <div
             className="absolute"

@@ -38,9 +38,9 @@ const Biography = () => {
             <div className="col-span-3 bg-secondary">
               <Introduction />
             </div>
-            <div className="col-span-2 bg-secondary">
+            {/* <div className="col-span-2 bg-secondary">
               <MusicAndPodcast />
-            </div>
+            </div> */}
             {/* SECOND SECTION */}
             <div className={clsx("md:block", "hidden")}></div>
             <div className="bg-secondary">
