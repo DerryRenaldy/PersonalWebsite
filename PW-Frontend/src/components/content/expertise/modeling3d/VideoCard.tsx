@@ -5,9 +5,9 @@ import Image from "@assets/images";
 import clsx from "clsx";
 
 interface VideoCardProps {
-  title: string;
-  videoUrl: string;
-  thumbnailUrl: string;
+  title?: string;
+  videoUrl?: string;
+  thumbnailUrl?: string;
 }
 
 const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
@@ -128,7 +128,7 @@ const VideoCard = ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
           )}
           muted
         >
-          <source src={videoUrl} type="video/mp4" className="border" />
+          <source src={videoUrl} type="video/webm" className="border" />
         </video>
       </div>
     </>
