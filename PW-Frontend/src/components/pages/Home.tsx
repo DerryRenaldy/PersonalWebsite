@@ -40,10 +40,10 @@ const Home = () => {
   );
 };
 
-function wait(time: number) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, time);
-  });
-}
+// function wait(time: number) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, time);
+//   });
+// }
 
 export default Home;
