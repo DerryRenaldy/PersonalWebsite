@@ -32,9 +32,9 @@ const Modeling3D = () => {
   }, []);
 
   return (
-    <div className="relative my-36" ref={containerRef}>
-      <div className="absolute h-[380svh] w-[100svw]">
-        <div className="sticky -top-12">
+    <div className="relative pt-48" ref={containerRef}>
+      <div className="absolute h-[380svh] w-[100svw] -translate-y-24">
+        <div className="sticky top-6">
           <div
             className="absolute"
             style={{ width: width, left: `calc(50% - ${width}px/2)` }}
@@ -50,10 +50,10 @@ const Modeling3D = () => {
       </div>
 
       <div className="relative">
-        <ul>
+        <ul className="flex flex-col gap-y-[300px]">
           {ModelingExpertiseDataDesktop.map((data, i) => (
             <li key={i}>
-              <ul className="flex gap-x-[300px] my-[300px] justify-center items-center">
+              <ul className="flex gap-x-[300px] justify-center items-center">
                 <li key={data.first.key} className="rounded-2xl">
                   <VideoCard
                     videoUrl={data.first.videoUrl}
