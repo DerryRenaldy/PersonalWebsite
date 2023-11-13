@@ -1,5 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Rock from "./Rock";
+import { Suspense } from "react";
+import { Loader } from "@react-three/drei";
 // import { Stats } from "@react-three/drei";
 // import { Perf } from "r3f-perf";
 
@@ -21,8 +23,11 @@ const RockModel = () => {
         /> */}
         {/* <Perf /> */}
         {/* <Stats /> */}
-        <Rock />
+        <Suspense fallback={null}>
+          <Rock />
+        </Suspense>
       </Canvas>
+      <Loader />
     </div>
   );
 };
