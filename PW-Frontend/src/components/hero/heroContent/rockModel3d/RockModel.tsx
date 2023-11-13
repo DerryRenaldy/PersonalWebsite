@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Rock from "./Rock";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Loader, PerformanceMonitor } from "@react-three/drei";
 // import { Stats } from "@react-three/drei";
 // import { Perf } from "r3f-perf";
@@ -24,9 +24,9 @@ const RockModel = () => {
           onIncline={() => setDpr(1)}
           onDecline={() => setDpr(0.4)}
         />
-        {/* <Suspense fallback={null}> */}
-        {/* </Suspense> */}
-        <Rock />
+        <Suspense fallback={null}>
+          <Rock />
+        </Suspense>
       </Canvas>
       <Loader />
     </div>
