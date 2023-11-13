@@ -52,18 +52,18 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
 
   const meshRef = useRef<THREE.Group>(null!);
   const meshRock1 = useRef<THREE.Mesh>(null!);
-  const meshRock2 = useRef<THREE.Mesh>(null!);
-  const meshRock3 = useRef<THREE.Mesh>(null!);
-  const meshRock4 = useRef<THREE.Mesh>(null!);
-  const meshRock5 = useRef<THREE.Mesh>(null!);
-  const meshRock6 = useRef<THREE.Mesh>(null!);
+  // const meshRock2 = useRef<THREE.Mesh>(null!);
+  // const meshRock3 = useRef<THREE.Mesh>(null!);
+  // const meshRock4 = useRef<THREE.Mesh>(null!);
+  // const meshRock5 = useRef<THREE.Mesh>(null!);
+  // const meshRock6 = useRef<THREE.Mesh>(null!);
   const meshRocks = [
     meshRock1,
-    meshRock2,
-    meshRock3,
-    meshRock4,
-    meshRock5,
-    meshRock6,
+    // meshRock2,
+    // meshRock3,
+    // meshRock4,
+    // meshRock5,
+    // meshRock6,
   ];
 
   useEffect(() => {
@@ -109,25 +109,25 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
     meshRock1.current.rotation.x -= 0.0007;
     meshRock1.current.rotation.z += 0.0008;
 
-    meshRock2.current.rotation.y -= 0.0008;
-    meshRock2.current.rotation.x += 0.0003;
-    meshRock2.current.rotation.z += 0.0004;
+    // meshRock2.current.rotation.y -= 0.0008;
+    // meshRock2.current.rotation.x += 0.0003;
+    // meshRock2.current.rotation.z += 0.0004;
 
-    meshRock3.current.rotation.y += 0.0005;
-    meshRock3.current.rotation.x -= 0.0006;
-    meshRock3.current.rotation.z += 0.0008;
+    // meshRock3.current.rotation.y += 0.0005;
+    // meshRock3.current.rotation.x -= 0.0006;
+    // meshRock3.current.rotation.z += 0.0008;
 
-    meshRock4.current.rotation.y += 0.0003;
-    meshRock4.current.rotation.x += 0.0006;
-    meshRock4.current.rotation.z -= 0.0005;
+    // meshRock4.current.rotation.y += 0.0003;
+    // meshRock4.current.rotation.x += 0.0006;
+    // meshRock4.current.rotation.z -= 0.0005;
 
-    meshRock5.current.rotation.y -= 0.0004;
-    meshRock5.current.rotation.x += 0.0007;
-    meshRock5.current.rotation.z -= 0.0006;
+    // meshRock5.current.rotation.y -= 0.0004;
+    // meshRock5.current.rotation.x += 0.0007;
+    // meshRock5.current.rotation.z -= 0.0006;
 
-    meshRock6.current.rotation.y += 0.0007;
-    meshRock6.current.rotation.x -= 0.0006;
-    meshRock6.current.rotation.z += 0.0005;
+    // meshRock6.current.rotation.y += 0.0007;
+    // meshRock6.current.rotation.x -= 0.0006;
+    // meshRock6.current.rotation.z += 0.0005;
   }, []);
 
   useFrame(() => {
@@ -165,7 +165,7 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
         material={materials.Rock_1}
         scale={0.035}
       />
-      <mesh
+      {/* <mesh
         ref={meshRock2}
         name="Rock_2"
         position={[1, 0, -3]}
@@ -214,7 +214,7 @@ const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
         geometry={nodes.Rock_1.geometry}
         material={materials.Rock_1}
         scale={0.035}
-      />
+      /> */}
     </group>
   );
 });
