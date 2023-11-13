@@ -1,4 +1,4 @@
-import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
+// import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
 import Quotes from "./quotes/Quotes";
 import MissionAndGoal from "./missionAndGoal/MissionAndGoal";
 import Now from "./currentSituation/Now";
