@@ -1,10 +1,10 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-// import Model from "components/3dContent/rocks/Model";
-import React, { lazy, useCallback, useRef } from "react";
+import Model from "components/3dContent/rocks/Model";
+import React, { useCallback, useRef } from "react";
 import * as THREE from "three";
 
-const Model = lazy(() => import("components/3dContent/rocks/Model"));
+// const Model = lazy(() => import("components/3dContent/rocks/Model"));
 
 const Rock = React.memo(() => {
   const lightPosition = new THREE.Vector3();

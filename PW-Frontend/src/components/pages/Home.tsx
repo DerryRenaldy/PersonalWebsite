@@ -26,15 +26,6 @@ const Home = () => {
         <Navbar />
         <Hero />
         <Content />
-        {/* <Suspense
-          fallback={
-            <div className="text-white font-rubik text-center h-screen flex flex-col justify-center items-center text-[20px] gap-y-4 font-bold">
-              <img src={Image.loadingCircle} className="w-10" />
-              <p>Loading Assets...</p>
-            </div>
-          }
-        > */}
-        {/* </Suspense> */}
       </SectionContext.Provider>
     </>
   );
