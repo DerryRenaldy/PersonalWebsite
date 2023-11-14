@@ -8,6 +8,7 @@ const Content = () => {
   return (
     <>
       <Biography />
+      <MatterJSTest />
       <div className={clsx("md:block", "hidden")}>
         <Modeling3DDesktop />
       </div>
@@ -16,7 +17,6 @@ const Content = () => {
         <Modeling3DMobile />
       </div>
       {/* <WebDevelopment /> */}
-      <MatterJSTest />
       <div className="border font-rubik h-[100svh] flex items-center justify-center text-white text-2xl">
         <p>Something Else</p>
       </div>
