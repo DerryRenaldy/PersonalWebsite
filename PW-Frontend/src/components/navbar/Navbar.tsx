@@ -5,7 +5,6 @@ import NavigationButtons from "./sections/NavigationButtons";
 import CVButton from "./sections/CVButton";
 import clsx from "clsx";
 import { useSectionContext } from "components/pages/Context";
-import styled from "styled-components";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -54,9 +53,9 @@ const Navbar = () => {
         "pb-4"
       )}
     >
-      <TitleText
+      <p
         className={clsx(
-          "py-1 px-10 rounded-b-lg pointer-events-auto backdrop-blur bg-[#2a2a2a]/50 font-bold tracking-widest text-center text-[#C49B66]",
+          "py-1 px-10 rounded-b-lg pointer-events-none backdrop-blur bg-[#2a2a2a]/50 font-bold text-center text-[#C49B66]",
           "md:text-lg md:absolute md:left-0 md:[writing-mode:vertical-lr] md:px-1 md:py-10 md:top-10 md:rounded-lg",
           "text-sm rounded-b-lg"
         )}
@@ -64,7 +63,7 @@ const Navbar = () => {
         // initial={{ opacity: 0 }}
       >
         {section}
-      </TitleText>
+      </p>
 
       <motion.div
         initial={false}
@@ -85,13 +84,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-const TitleText = styled.div`
-  /* -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-
-  &:hover {
-    -webkit-text-fill-color: initial;
-    -webkit-text-stroke-width: initial;
-  } */
-`;

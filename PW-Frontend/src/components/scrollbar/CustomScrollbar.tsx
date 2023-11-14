@@ -30,7 +30,7 @@ const calculateTotalHeight = (): number => {
 
   const bodyHeight = Math.max(body.scrollHeight, body.offsetHeight);
   const htmlHeight = Math.max(html.scrollHeight, html.offsetHeight);
-  console.log(bodyHeight);
+  // console.log(bodyHeight);
 
   const maxHeight = Math.max(bodyHeight, htmlHeight);
   return maxHeight;
@@ -114,10 +114,10 @@ const CustomScrollbar = () => {
   }, [scrollBarPosition]);
 
   const handleDrag = (_e: DraggableEvent, data: DraggableData) => {
-    const yScroll: number = data.lastY;
+    // const yScroll: number = data.lastY;
     scrollBarPosition = data.lastY;
 
-    console.log("scrollBarPosition", yScroll);
+    // console.log("scrollBarPosition", yScroll);
     // const mappedValue: number = mapValue(
     //   yScroll,
     //   0,

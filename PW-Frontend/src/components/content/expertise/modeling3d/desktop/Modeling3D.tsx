@@ -18,7 +18,6 @@ const Modeling3D = () => {
 
   useEffect(() => {
     if (isTopInView) {
-      console.log("Expertise - 3d desktop");
       setSection("Expertise");
     }
   }, [isTopInView]);
