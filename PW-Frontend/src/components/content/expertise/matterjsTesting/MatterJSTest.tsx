@@ -466,7 +466,7 @@ export const MatterJSTest = () => {
         ref={containerRef}
         className={clsx(
           "flex justify-center items-center",
-          "md:py-[100px] md:h-screen",
+          "md:h-screen",
           "pt-20"
         )}
       >

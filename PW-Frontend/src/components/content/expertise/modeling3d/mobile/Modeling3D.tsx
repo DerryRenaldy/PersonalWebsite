@@ -1,6 +1,6 @@
 // import useIsTopInView from "components/hooks/useIsTopInView";
 // import { useSectionContext } from "components/pages/Context";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import VideoCard from "../VideoCard";
 import { ModelingExpertiseDataMobile } from "../MetaData";
 
