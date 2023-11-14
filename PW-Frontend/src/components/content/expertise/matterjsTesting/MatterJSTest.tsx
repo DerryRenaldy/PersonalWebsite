@@ -1,5 +1,7 @@
 import Image from "@assets/images";
 import clsx from "clsx";
+import useIsTopInView from "components/hooks/useIsTopInView";
+import { useSectionContext } from "components/pages/Context";
 import Matter from "matter-js";
 import { useRef, useEffect, useState } from "react";
 
@@ -7,6 +9,15 @@ export const MatterJSTest = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const matterRef = useRef<HTMLCanvasElement>(null!);
   const containerRef = useRef<HTMLDivElement>(null!);
+
+  const isTopInView = useIsTopInView(containerRef, "Expertise - 3d desktop");
+  const { setSection } = useSectionContext();
+
+  useEffect(() => {
+    if (isTopInView) {
+      setSection("Expertise");
+    }
+  }, [isTopInView]);
 
   const THICCNESS = 60;
   let Engine = Matter.Engine,
@@ -455,7 +466,7 @@ export const MatterJSTest = () => {
         ref={containerRef}
         className={clsx(
           "flex justify-center items-center",
-          "md:py-[100px]",
+          "md:py-[100px] md:h-screen",
           "pt-20"
         )}
       >

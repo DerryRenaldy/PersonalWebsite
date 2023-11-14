@@ -12,15 +12,15 @@ const Modeling3D = () => {
   const isTopInView = useIsTopInView(containerRef, "Expertise - 3d desktop");
   const { setSection } = useSectionContext();
 
-  const windowResizeHandler = () => {
-    setWidth(window.screen.width);
-  };
-
   useEffect(() => {
     if (isTopInView) {
       setSection("Expertise");
     }
   }, [isTopInView]);
+
+  const windowResizeHandler = () => {
+    setWidth(window.screen.width);
+  };
 
   useEffect(() => {
     window.addEventListener("resize", windowResizeHandler);

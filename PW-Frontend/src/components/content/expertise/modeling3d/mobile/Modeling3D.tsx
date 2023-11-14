@@ -1,19 +1,19 @@
-import useIsTopInView from "components/hooks/useIsTopInView";
-import { useSectionContext } from "components/pages/Context";
+// import useIsTopInView from "components/hooks/useIsTopInView";
+// import { useSectionContext } from "components/pages/Context";
 import { useEffect, useRef } from "react";
 import VideoCard from "../VideoCard";
 import { ModelingExpertiseDataMobile } from "../MetaData";
 
 const Modeling3D = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isTopInView = useIsTopInView(containerRef, "Expertise - 3d mobile");
-  const { setSection } = useSectionContext();
+  // const isTopInView = useIsTopInView(containerRef, "Expertise - 3d mobile");
+  // const { setSection } = useSectionContext();
 
-  useEffect(() => {
-    if (isTopInView) {
-      setSection("Expertise");
-    }
-  }, [isTopInView]);
+  // useEffect(() => {
+  //   if (isTopInView) {
+  //     setSection("Expertise");
+  //   }
+  // }, [isTopInView]);
 
   return (
     <div className="relative py-48" ref={containerRef}>
