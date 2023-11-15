@@ -357,9 +357,7 @@ export const MatterJS = () => {
         return colors[randomIndex];
       };
 
-      let circles = [];
-
-      for (let i = 0; i < 500; i++) {
+      for (let i = 0; i < 600; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
@@ -371,12 +369,8 @@ export const MatterJS = () => {
             },
           }
         );
-        circles.push(circle);
+        Composite.add(engine.world, circle);
       }
-
-      Composite.add(engine.world, circles);
-
-      Composite.add(engine.world, circles);
     }
 
     // add all of the bodies to the world
@@ -495,7 +489,7 @@ export const MatterJS = () => {
           >
             <img
               src={Image.background}
-              className="w-[100svw] h-[100svh] absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
+              className="w-[100svw] h-[100svh] border absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
             />
           </div>
 
