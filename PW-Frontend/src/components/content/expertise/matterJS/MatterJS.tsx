@@ -357,9 +357,7 @@ export const MatterJS = () => {
         return colors[randomIndex];
       };
 
-      let circles = [];
-
-      for (let i = 0; i < 600; i++) {
+      for (let i = 0; i < 400; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
@@ -371,10 +369,8 @@ export const MatterJS = () => {
             },
           }
         );
-        circles.push(circle);
+        Composite.add(engine.world, circle);
       }
-
-      Composite.add(engine.world, circles);
     }
 
     // add all of the bodies to the world
