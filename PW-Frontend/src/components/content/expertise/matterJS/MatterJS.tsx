@@ -357,20 +357,18 @@ export const MatterJS = () => {
         return colors[randomIndex];
       };
 
-      for (let i = 0; i < 400; i++) {
+      let circles = [];
+
+      for (let i = 0; i < 600; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
-          15,
-          {
-            render: {
-              fillStyle: getRandomColor(),
-              opacity: 0.4,
-            },
-          }
+          15
         );
-        Composite.add(engine.world, circle);
+        circles.push(circle);
       }
+
+      Composite.add(engine.world, circles);
     }
 
     // add all of the bodies to the world
