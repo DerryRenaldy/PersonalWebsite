@@ -489,7 +489,7 @@ export const MatterJS = () => {
           >
             <img
               src={Image.background}
-              className="absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
+              className="w-[100svw] h-[100svh] absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
             />
           </div>
 
