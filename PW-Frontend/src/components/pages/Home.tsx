@@ -5,6 +5,7 @@ import CustomScrollbar from "components/scrollbar/CustomScrollbar";
 import { SectionContext } from "./Context";
 import { useState } from "react";
 import clsx from "clsx";
+// import CustomName from "components/customName/CustomName";
 // import Image from "@assets/images";
 
 // const Content = lazy(() =>
@@ -26,6 +27,7 @@ const Home = () => {
         <Navbar />
         <Hero />
         <Content />
+        {/* <CustomName /> */}
       </SectionContext.Provider>
     </>
   );

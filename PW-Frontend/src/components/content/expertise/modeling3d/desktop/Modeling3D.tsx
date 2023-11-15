@@ -1,22 +1,22 @@
 import VideoCard from "../VideoCard";
 import Image from "@assets/images";
 import { useEffect, useRef, useState } from "react";
-import useIsTopInView from "components/hooks/useIsTopInView";
-import { useSectionContext } from "components/pages/Context";
+// import useIsTopInView from "components/hooks/useIsTopInView";
+// import { useSectionContext } from "components/pages/Context";
 import { ModelingExpertiseDataDesktop } from "../MetaData";
 
 const Modeling3D = () => {
   const [width, setWidth] = useState<number>(window.screen.width);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const isTopInView = useIsTopInView(containerRef, "Expertise - 3d desktop");
-  const { setSection } = useSectionContext();
+  // const isTopInView = useIsTopInView(containerRef, "Expertise - 3d desktop");
+  // const { setSection } = useSectionContext();
 
-  useEffect(() => {
-    if (isTopInView) {
-      setSection("Expertise");
-    }
-  }, [isTopInView]);
+  // useEffect(() => {
+  //   if (isTopInView) {
+  //     setSection("Expertise");
+  //   }
+  // }, [isTopInView]);
 
   const windowResizeHandler = () => {
     setWidth(window.screen.width);

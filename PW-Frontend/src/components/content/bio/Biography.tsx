@@ -12,6 +12,7 @@ import useIsTopInView from "components/hooks/useIsTopInView";
 import Image from "@assets/images";
 import clsx from "clsx";
 import MusicAndPodcast from "./musicAndPodcast/MusicAndPodcast";
+import Title from "components/common/Title";
 
 const Biography = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,7 @@ const Biography = () => {
 
   return (
     <div ref={containerRef} className={clsx("md:pt-36", "pt-32")}>
+      <Title title={"Biography"} />
       <div className="relative">
         <div className={clsx("md:p-10", "p-4")}>
           <div

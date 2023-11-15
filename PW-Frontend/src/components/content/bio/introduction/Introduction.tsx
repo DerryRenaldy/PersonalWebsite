@@ -6,7 +6,7 @@ const Introduction = () => {
   return (
     <>
       <div className="flex flex-col p-6 gap-y-4 h-full">
-        <p className={clsx("text-left font-rubik ", "md:text-2xl", "text-xl")}>
+        <p className={clsx("text-left font-rubik", "md:text-2xl", "text-xl")}>
           Derry Renaldy
         </p>
         <div
@@ -27,7 +27,7 @@ const Introduction = () => {
           />
           <div
             className={clsx(
-              "gap-4 place-content-start",
+              "gap-4 place-content-start font-rubik",
               "md:grid md:grid-cols-2",
               "flex flex-col text-start text-md"
             )}

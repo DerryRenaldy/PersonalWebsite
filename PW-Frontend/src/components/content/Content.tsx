@@ -2,13 +2,13 @@ import clsx from "clsx";
 import Biography from "./bio/Biography";
 import Modeling3DDesktop from "./expertise/modeling3d/desktop/Modeling3D";
 import Modeling3DMobile from "./expertise/modeling3d/mobile/Modeling3D";
-import MatterJSTest from "./expertise/matterjsTesting/MatterJSTest";
+import MatterJS from "./expertise/matterJS/MatterJS";
 
 const Content = () => {
   return (
     <>
       <Biography />
-      <MatterJSTest />
+      <MatterJS />
       <div className={clsx("md:block", "hidden")}>
         <Modeling3DDesktop />
       </div>

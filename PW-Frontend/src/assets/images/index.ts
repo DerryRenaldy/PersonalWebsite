@@ -19,6 +19,7 @@ import likedin from "./contactLogo/linkedin.png";
 import whatsapp from "./contactLogo/whatsapp.png";
 import doodle from "./doodle.png";
 import frame from "./frame.png";
+import background from "./background.png";
 import loadingCircle from "./bouncing-circles.svg";
 import loading from "./loading.svg";
 
@@ -44,6 +45,7 @@ const Image = {
   whatsapp,
   doodle,
   frame,
+  background,
   loadingCircle,
   loading,
 };

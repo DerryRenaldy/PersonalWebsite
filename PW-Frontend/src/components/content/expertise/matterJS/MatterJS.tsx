@@ -1,11 +1,12 @@
 import Image from "@assets/images";
 import clsx from "clsx";
+import Title from "components/common/Title";
 import useIsTopInView from "components/hooks/useIsTopInView";
 import { useSectionContext } from "components/pages/Context";
 import Matter from "matter-js";
 import { useRef, useEffect, useState } from "react";
 
-export const MatterJSTest = () => {
+export const MatterJS = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const matterRef = useRef<HTMLCanvasElement>(null!);
   const containerRef = useRef<HTMLDivElement>(null!);
@@ -70,16 +71,10 @@ export const MatterJSTest = () => {
     );
   };
 
-  // useEffect(() => {
-  //   console.log("Is Mobile : " + isMobile);
-  // }, [isMobile]);
-
   useEffect(() => {
     if (window.innerWidth < 768) {
-      console.log("Mobile");
       setIsMobile(true);
     } else {
-      console.log("not Mobile");
       setIsMobile(false);
     }
   }, []);
@@ -321,19 +316,19 @@ export const MatterJSTest = () => {
     );
 
     if (!isMobile) {
-      middleBox = Bodies.rectangle(
-        matterRef.current.clientWidth / 2,
-        matterRef.current.clientHeight / 2,
-        280,
-        80,
-        {
-          isStatic: true,
-          render: {
-            fillStyle: "transparent",
-          },
-        }
-      );
-      Composite.add(engine.world, middleBox);
+      // middleBox = Bodies.rectangle(
+      //   matterRef.current.clientWidth / 2,
+      //   matterRef.current.clientHeight / 2,
+      //   280,
+      //   80,
+      //   {
+      //     isStatic: true,
+      //     render: {
+      //       fillStyle: "transparent",
+      //     },
+      //   }
+      // );
+      // Composite.add(engine.world, middleBox);
 
       const colors = [
         "#F8F8FF",
@@ -344,19 +339,33 @@ export const MatterJSTest = () => {
         "#100C07",
       ];
 
+      // const colors2 = [
+      //   "#8FD1D5",
+      //   "#42B3C8",
+      //   "#B0362C",
+      //   "#278DBF",
+      //   "#D6D077",
+      //   "#C28E1B",
+      //   "#545552",
+      //   "#726CA9",
+      //   "#6D8AB7",
+      //   "#E1E1E1",
+      // ];
+
       const getRandomColor = () => {
         const randomIndex = Math.floor(Math.random() * colors.length);
         return colors[randomIndex];
       };
 
-      for (let i = 0; i < 400; i++) {
+      for (let i = 0; i < 600; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
-          12,
+          15,
           {
             render: {
               fillStyle: getRandomColor(),
+              opacity: 0.4,
             },
           }
         );
@@ -461,15 +470,9 @@ export const MatterJSTest = () => {
   }, [isMobile]);
 
   return (
-    <>
-      <div
-        ref={containerRef}
-        className={clsx(
-          "flex justify-center items-center",
-          "md:h-screen",
-          "pt-20"
-        )}
-      >
+    <div className="pt-20" ref={containerRef}>
+      <Title title={"Expertise"} />
+      <div className={clsx("flex justify-center items-center relative pt-6")}>
         <div
           className={clsx(
             "relative p-4 flex flex-col items-center justify-center gap-x-10",
@@ -477,11 +480,24 @@ export const MatterJSTest = () => {
             "flex-col"
           )}
         >
+          {/* BACKGROUND */}
+          <div
+            className="absolute hidden overflow-hidden md:block w-[calc(100svw/1.1)]"
+            style={{
+              height: 476,
+            }}
+          >
+            <img
+              src={Image.background}
+              className="absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
+            />
+          </div>
+
           <div
             className={clsx(
-              "relative flex border border-[#454444] rounded-xl h-[476px] overflow-hidden",
+              "relative flex border border-[#454444] rounded-xl",
               "w-[calc(100svw/1.1)]",
-              isMobile ? "" : "filter"
+              isMobile ? "h-[450px]" : " h-[476px]"
             )}
           >
             {/* TEXT */}
@@ -492,30 +508,22 @@ export const MatterJSTest = () => {
               <p className="text-white font-rubik text-md">Programming</p>
             </div>
 
-            {/* OVERLAY */}
-            {/* <div className="absolute border h-full z-[100] mix-blend-multiply pointer-events-none opacity-20">
-              <img src={Image.retro} className="bg-cover h-full" />
-            </div> */}
-
             {/* CANVAS */}
-            <canvas
-              ref={matterRef}
-              className="absolute top-0 rounded-xl left-1/2 -translate-x-[50%]"
-            />
+            <canvas ref={matterRef} className="absolute top-0 rounded-xl" />
           </div>
+
+          {/* TEXT EXPERTISE */}
           <div
-            className={`absolute text-white p-4 pointer-events-none font-semibold select-none font-rubik  ${
-              isMobile
-                ? "bg-[#8d8d8d]/10 flex justify-center items-center rounded-xl backdrop-blur-sm text-[20px] top-4 bottom-4 left-4 right-4"
-                : "text-[30px] h-fit"
+            className={`absolute text-white p-4 rounded-xl backdrop-blur-sm pointer-events-none font-semibold select-none font-rubik  ${
+              isMobile ? "text-[20px]" : "text-[40px] h-fit top-6"
             }`}
           >
             <p>Web Development</p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default MatterJSTest;
+export default MatterJS;
