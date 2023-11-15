@@ -359,14 +359,22 @@ export const MatterJS = () => {
 
       let circles = [];
 
-      for (let i = 0; i < 600; i++) {
+      for (let i = 0; i < 500; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
-          15
+          15,
+          {
+            render: {
+              fillStyle: getRandomColor(),
+              opacity: 0.4,
+            },
+          }
         );
         circles.push(circle);
       }
+
+      Composite.add(engine.world, circles);
 
       Composite.add(engine.world, circles);
     }
