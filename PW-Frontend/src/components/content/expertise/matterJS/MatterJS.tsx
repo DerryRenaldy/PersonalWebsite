@@ -359,7 +359,7 @@ export const MatterJS = () => {
 
       let circles = [];
 
-      for (let i = 0; i < 500; i++) {
+      for (let i = 0; i < 450; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
