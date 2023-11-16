@@ -1,16 +1,15 @@
-.slick-slide > div {
-  margin: 0 0px;
-}
+/* .slick-slide > div {
+  margin: 0 15px;
+} */
 
-@media (min-width: 768px) {
-  .slick-slide > div {
-    margin: 0 -15px; /* Adjust the margin value as needed */
-  }
-}
-
-.slick-list {
+/* .slick-list {
   margin: 0 -15px;
-}
+} */
+
+/* .slick-slider {
+  border: solid 2px;
+  width: 100%;
+} */
 
 .slick-dots li.slick-active button:before {
   color: White !important;

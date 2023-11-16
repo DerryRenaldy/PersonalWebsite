@@ -4,17 +4,17 @@ import clsx from "clsx";
 const Qualification = () => {
   return (
     <div className="flex flex-col p-6 gap-y-4 font-rubik h-full">
-      <p className={clsx("text-left", "md:text-2xl", "text-xl")}>
+      <p className={clsx("text-left", "xl:text-2xl", "text-xl")}>
         Qualification
       </p>
       <div
-        className={clsx("flex", "md:flex-row md:gap-x-6", "flex-col gap-y-6")}
+        className={clsx("flex", "xl:flex-row xl:gap-x-6", "flex-col gap-y-6")}
       >
         <img
           src={image.collage}
           className={clsx(
             "rounded-2xl object-cover aspects-ratio",
-            "md:w-[280px]",
+            "xl:w-[280px]",
             "w-full"
           )}
         />

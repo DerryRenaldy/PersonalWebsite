@@ -26,14 +26,14 @@ const Biography = () => {
   }, [isTopInView]);
 
   return (
-    <div ref={containerRef} className={clsx("md:pt-36", "pt-32")}>
+    <div ref={containerRef} className="border border-[#080808]">
       <Title title={"Biography"} />
       <div className="relative">
-        <div className={clsx("md:p-10", "p-4")}>
+        <div className={clsx("lg:p-10", "p-4")}>
           <div
             className={clsx(
               "h-full grid-cols-5 gap-6 text-center text-white content-round",
-              "md:grid",
+              "lg:grid",
               "flex flex-col"
             )}
           >
@@ -53,14 +53,14 @@ const Biography = () => {
               </Suspense>
             </div>
             {/* SECOND SECTION */}
-            <div className={clsx("md:block", "hidden")}></div>
+            <div className={clsx("lg:block", "hidden")}></div>
             <div className="bg-secondary">
               <Quotes />
             </div>
             <div className="col-span-2 bg-secondary">
               <MissionAndGoal />
             </div>
-            <div className={clsx("md:block", "hidden")}></div>
+            <div className={clsx("lg:block", "hidden")}></div>
             {/* THIRD SECTION */}
             <div className="bg-secondary">
               <Now />

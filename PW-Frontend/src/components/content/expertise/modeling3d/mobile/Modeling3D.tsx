@@ -1,8 +1,8 @@
 // import useIsTopInView from "components/hooks/useIsTopInView";
 // import { useSectionContext } from "components/pages/Context";
 import { useRef } from "react";
-import VideoCard from "../VideoCard";
-import { ModelingExpertiseDataMobile } from "../MetaData";
+import VideoCard from "../../modeling/VideoCard";
+import { ModelingExpertiseDataMobile } from "../../modeling/MetaData";
 
 const Modeling3D = () => {
   const containerRef = useRef<HTMLDivElement>(null);

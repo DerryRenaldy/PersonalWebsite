@@ -6,8 +6,8 @@ const useIsTopInView = (ref: any, _section: string) => {
   const checkIsTopInView = () => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
-      // console.log(rect.top);
-      // console.log(rect.bottom);
+      // console.log(section + " : " + rect.top);
+      // console.log(section + " : " + rect.bottom);
       setIsTopInView(rect.top <= 0 && rect.bottom > 0);
     }
   };

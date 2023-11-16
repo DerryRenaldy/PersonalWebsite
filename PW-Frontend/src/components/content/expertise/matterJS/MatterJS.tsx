@@ -11,7 +11,10 @@ export const MatterJS = () => {
   const matterRef = useRef<HTMLCanvasElement>(null!);
   const containerRef = useRef<HTMLDivElement>(null!);
 
-  const isTopInView = useIsTopInView(containerRef, "Expertise - 3d desktop");
+  const isTopInView = useIsTopInView(
+    containerRef,
+    "Expertise - Web Developemnt"
+  );
   const { setSection } = useSectionContext();
 
   useEffect(() => {
@@ -470,12 +473,12 @@ export const MatterJS = () => {
   }, [isMobile]);
 
   return (
-    <div className="pt-20" ref={containerRef}>
+    <div ref={containerRef} className="border border-[#080808]">
       <Title title={"Expertise"} />
-      <div className={clsx("flex justify-center items-center relative pt-6")}>
+      <div className={clsx("flex justify-center p-4 items-center relative")}>
         <div
           className={clsx(
-            "relative p-4 flex flex-col items-center justify-center gap-x-10",
+            "relative flex flex-col items-center justify-center gap-x-10",
             "md:flex-row",
             "flex-col"
           )}

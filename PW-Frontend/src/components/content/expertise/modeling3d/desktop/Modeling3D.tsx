@@ -1,9 +1,9 @@
-import VideoCard from "../VideoCard";
+import VideoCard from "../../modeling/VideoCard";
 import Image from "@assets/images";
 import { useEffect, useRef, useState } from "react";
 // import useIsTopInView from "components/hooks/useIsTopInView";
 // import { useSectionContext } from "components/pages/Context";
-import { ModelingExpertiseDataDesktop } from "../MetaData";
+import { ModelingExpertiseDataDesktop } from "../../modeling/MetaData";
 
 const Modeling3D = () => {
   const [width, setWidth] = useState<number>(window.screen.width);

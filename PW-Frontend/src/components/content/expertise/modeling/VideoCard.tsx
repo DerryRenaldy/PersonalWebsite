@@ -70,14 +70,13 @@ const VideoCard = React.memo(
     }, []);
 
     return (
-      <>
+      <div className="flex justify-center items-center p-[50px]">
         <div
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           className={clsx(
             "relative rounded-2xl shadow-[rgba(255,_255,_255,_0.3)_0px_0px_16px]",
-            "md:w-[300px]",
-            "w-[200px]"
+            "w-[220px]"
           )}
         >
           <div className="absolute z-50 top-4 scale-150 pointer-events-none">
@@ -110,7 +109,7 @@ const VideoCard = React.memo(
             </div>
             <img
               src={thumbnailUrl}
-              className={clsx(" rounded-2xl", "md:w-[300px]", "w-[200px]")}
+              className={clsx(" rounded-2xl", "w-[220px]")}
               loading="lazy"
               alt=""
             />
@@ -122,17 +121,13 @@ const VideoCard = React.memo(
           <video
             ref={videoRef}
             preload="auto"
-            className={clsx(
-              "relative z-10 rounded-2xl",
-              "md:w-[300px]",
-              "w-[200px]"
-            )}
+            className={clsx("relative z-10 rounded-2xl", "w-[220px]")}
             muted
           >
             <source src={videoUrl} type="video/webm" className="border" />
           </video>
         </div>
-      </>
+      </div>
     );
   }
 );
