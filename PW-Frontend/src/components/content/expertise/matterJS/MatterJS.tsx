@@ -1,8 +1,5 @@
 import Image from "@assets/images";
 import clsx from "clsx";
-import Title from "components/common/Title";
-import useIsTopInView from "components/hooks/useIsTopInView";
-import { useSectionContext } from "components/pages/Context";
 import Matter from "matter-js";
 import { useRef, useEffect, useState } from "react";
 
@@ -10,18 +7,6 @@ export const MatterJS = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const matterRef = useRef<HTMLCanvasElement>(null!);
   const containerRef = useRef<HTMLDivElement>(null!);
-
-  const isTopInView = useIsTopInView(
-    containerRef,
-    "Expertise - Web Developemnt"
-  );
-  const { setSection } = useSectionContext();
-
-  useEffect(() => {
-    if (isTopInView) {
-      setSection("Expertise");
-    }
-  }, [isTopInView]);
 
   const THICCNESS = 60;
   let Engine = Matter.Engine,
@@ -360,7 +345,7 @@ export const MatterJS = () => {
         return colors[randomIndex];
       };
 
-      for (let i = 0; i < 450; i++) {
+      for (let i = 0; i < 400; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
@@ -473,8 +458,7 @@ export const MatterJS = () => {
   }, [isMobile]);
 
   return (
-    <div ref={containerRef} className="border border-[#080808]">
-      <Title title={"Expertise"} />
+    <div ref={containerRef}>
       <div className={clsx("flex justify-center p-4 items-center relative")}>
         <div
           className={clsx(
@@ -485,7 +469,7 @@ export const MatterJS = () => {
         >
           {/* BACKGROUND */}
           <div
-            className="absolute hidden overflow-hidden md:block w-[calc(100svw/1.1)]"
+            className="absolute hidden overflow-hidden select-none md:block w-[calc(100svw/1.1)]"
             style={{
               height: 476,
             }}
@@ -516,13 +500,13 @@ export const MatterJS = () => {
           </div>
 
           {/* TEXT EXPERTISE */}
-          <div
+          {/* <div
             className={`absolute text-white p-4 rounded-xl backdrop-blur-sm pointer-events-none font-semibold select-none font-rubik  ${
               isMobile ? "text-[20px]" : "text-[40px] h-fit top-6"
             }`}
           >
             <p>Web Development</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
