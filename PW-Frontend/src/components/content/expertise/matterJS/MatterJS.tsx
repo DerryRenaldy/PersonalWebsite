@@ -1,10 +1,11 @@
 import Image from "@assets/images";
 import clsx from "clsx";
+import { useResponsive } from "components/hooks/useResponsive";
 import Matter from "matter-js";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 
 export const MatterJS = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const { screenType } = useResponsive();
   const matterRef = useRef<HTMLCanvasElement>(null!);
   const containerRef = useRef<HTMLDivElement>(null!);
 
@@ -60,14 +61,6 @@ export const MatterJS = () => {
   };
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
-
-  useEffect(() => {
     if (!matterRef.current && !containerRef.current) {
       return;
     }
@@ -84,7 +77,7 @@ export const MatterJS = () => {
         wireframes: false,
         // width: 388,
         width: window.innerWidth / 1.1,
-        height: isMobile ? 450 : 476,
+        height: screenType === "MOBILE" ? 450 : 476,
         showAngleIndicator: false,
       },
     });
@@ -106,7 +99,7 @@ export const MatterJS = () => {
     let react = Bodies.circle(
       matterRef.current.clientWidth / 2,
       0,
-      isMobile ? 45 : 50,
+      screenType === "MOBILE" ? 45 : 50,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -114,8 +107,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.reactLogo,
-            xScale: isMobile ? 0.5 : 0.6,
-            yScale: isMobile ? 0.5 : 0.6,
+            xScale: screenType === "MOBILE" ? 0.5 : 0.6,
+            yScale: screenType === "MOBILE" ? 0.5 : 0.6,
           },
         },
       }
@@ -124,7 +117,7 @@ export const MatterJS = () => {
     let docker = Bodies.circle(
       matterRef.current.clientWidth / 3,
       0,
-      isMobile ? 45 : 80,
+      screenType === "MOBILE" ? 45 : 80,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -132,8 +125,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.dockerLogo,
-            xScale: isMobile ? 0.25 : 0.4,
-            yScale: isMobile ? 0.25 : 0.4,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.4,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.4,
           },
         },
       }
@@ -142,8 +135,8 @@ export const MatterJS = () => {
     let golang = Bodies.rectangle(
       matterRef.current.clientWidth / 1.2,
       10,
-      isMobile ? 50 : 80,
-      isMobile ? 100 : 180,
+      screenType === "MOBILE" ? 50 : 80,
+      screenType === "MOBILE" ? 100 : 180,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -151,8 +144,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.golangLogo,
-            xScale: isMobile ? 0.25 : 0.4,
-            yScale: isMobile ? 0.25 : 0.4,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.4,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.4,
           },
         },
       }
@@ -161,8 +154,8 @@ export const MatterJS = () => {
     let js = Bodies.rectangle(
       matterRef.current.clientWidth / 3.5,
       20,
-      isMobile ? 50 : 90,
-      isMobile ? 50 : 90,
+      screenType === "MOBILE" ? 50 : 90,
+      screenType === "MOBILE" ? 50 : 90,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -170,8 +163,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.jsLogo,
-            xScale: isMobile ? 0.25 : 0.4,
-            yScale: isMobile ? 0.25 : 0.4,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.4,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.4,
           },
         },
       }
@@ -180,8 +173,8 @@ export const MatterJS = () => {
     let ts = Bodies.rectangle(
       matterRef.current.clientWidth / 3.1,
       100,
-      isMobile ? 50 : 90,
-      isMobile ? 50 : 90,
+      screenType === "MOBILE" ? 50 : 90,
+      screenType === "MOBILE" ? 50 : 90,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -189,8 +182,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.tsLogo,
-            xScale: isMobile ? 0.25 : 0.4,
-            yScale: isMobile ? 0.25 : 0.4,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.4,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.4,
           },
         },
       }
@@ -199,7 +192,7 @@ export const MatterJS = () => {
     let motion = Bodies.circle(
       matterRef.current.clientWidth / 3.2,
       50,
-      isMobile ? 40 : 60,
+      screenType === "MOBILE" ? 40 : 60,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -207,8 +200,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.motionLogo,
-            xScale: isMobile ? 0.25 : 0.4,
-            yScale: isMobile ? 0.25 : 0.4,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.4,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.4,
           },
         },
       }
@@ -217,8 +210,8 @@ export const MatterJS = () => {
     let mysql = Bodies.rectangle(
       matterRef.current.clientWidth / 2.4,
       300,
-      isMobile ? 80 : 160,
-      isMobile ? 60 : 120,
+      screenType === "MOBILE" ? 80 : 160,
+      screenType === "MOBILE" ? 60 : 120,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -226,8 +219,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.mysqlLogo,
-            xScale: isMobile ? 0.25 : 0.5,
-            yScale: isMobile ? 0.25 : 0.5,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.5,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.5,
           },
         },
       }
@@ -236,8 +229,8 @@ export const MatterJS = () => {
     let redis = Bodies.rectangle(
       matterRef.current.clientWidth / 1.5,
       0,
-      isMobile ? 160 : 200,
-      isMobile ? 60 : 80,
+      screenType === "MOBILE" ? 160 : 200,
+      screenType === "MOBILE" ? 60 : 80,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -245,8 +238,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.redisLogo,
-            xScale: isMobile ? 0.25 : 0.3,
-            yScale: isMobile ? 0.25 : 0.3,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.3,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.3,
           },
         },
       }
@@ -255,8 +248,8 @@ export const MatterJS = () => {
     let tailwind = Bodies.rectangle(
       matterRef.current.clientWidth / 1.2,
       0,
-      isMobile ? 200 : 280,
-      isMobile ? 55 : 70,
+      screenType === "MOBILE" ? 200 : 280,
+      screenType === "MOBILE" ? 55 : 70,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -264,8 +257,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.tailwindLogo,
-            xScale: isMobile ? 0.25 : 0.35,
-            yScale: isMobile ? 0.25 : 0.35,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.35,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.35,
           },
         },
       }
@@ -274,8 +267,8 @@ export const MatterJS = () => {
     let unity = Bodies.rectangle(
       matterRef.current.clientWidth / 6,
       0,
-      isMobile ? 140 : 180,
-      isMobile ? 30 : 65,
+      screenType === "MOBILE" ? 140 : 180,
+      screenType === "MOBILE" ? 30 : 65,
       {
         friction: 0.3,
         frictionAir: 0.00001,
@@ -283,8 +276,8 @@ export const MatterJS = () => {
         render: {
           sprite: {
             texture: Image.unityLogo,
-            xScale: isMobile ? 0.25 : 0.35,
-            yScale: isMobile ? 0.25 : 0.35,
+            xScale: screenType === "MOBILE" ? 0.25 : 0.35,
+            yScale: screenType === "MOBILE" ? 0.25 : 0.35,
           },
         },
       }
@@ -303,7 +296,7 @@ export const MatterJS = () => {
       }
     );
 
-    if (!isMobile) {
+    if (!(screenType === "MOBILE")) {
       // middleBox = Bodies.rectangle(
       //   matterRef.current.clientWidth / 2,
       //   matterRef.current.clientHeight / 2,
@@ -395,18 +388,12 @@ export const MatterJS = () => {
       Render.stop(render);
       Runner.stop(runner);
     };
-  }, [isMobile]);
+  }, [screenType === "MOBILE"]);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-
       render.canvas.width = window.innerWidth / 1.1;
-      render.canvas.height = isMobile ? 450 : 476;
+      render.canvas.height = screenType === "MOBILE" ? 450 : 476;
 
       Matter.Body.setPosition(
         ground,
@@ -455,7 +442,7 @@ export const MatterJS = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isMobile]);
+  }, [screenType === "MOBILE"]);
 
   return (
     <div ref={containerRef}>
@@ -484,7 +471,7 @@ export const MatterJS = () => {
             className={clsx(
               "relative flex border border-[#454444] rounded-xl",
               "w-[calc(100svw/1.1)]",
-              isMobile ? "h-[450px]" : " h-[476px]"
+              screenType === "MOBILE" ? "h-[450px]" : " h-[476px]"
             )}
           >
             {/* TEXT */}
@@ -502,7 +489,7 @@ export const MatterJS = () => {
           {/* TEXT EXPERTISE */}
           {/* <div
             className={`absolute text-white p-4 rounded-xl backdrop-blur-sm pointer-events-none font-semibold select-none font-rubik  ${
-              isMobile ? "text-[20px]" : "text-[40px] h-fit top-6"
+              screenType === "MOBILE" ? "text-[20px]" : "text-[40px] h-fit top-6"
             }`}
           >
             <p>Web Development</p>

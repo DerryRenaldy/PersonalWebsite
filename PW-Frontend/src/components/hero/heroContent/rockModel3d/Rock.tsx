@@ -57,14 +57,6 @@ const Rock = React.memo(() => {
   return (
     <>
       <PerspectiveCamera position={[0, 0, 5]} makeDefault />
-      {/* <rectAreaLight
-        ref={rectAreaLighStayRef}
-        rotation={[-Math.PI / 2, 0, 0]}
-        position={[0, 4, -4]}
-        width={10}
-        height={10}
-        intensity={4}
-      /> */}
       <rectAreaLight
         ref={rectAreaLighRef}
         rotation={[-Math.PI / 2.5, 0, 0]}
@@ -74,6 +66,15 @@ const Rock = React.memo(() => {
         intensity={20}
       />
       <pointLight ref={pointLightRef} position={[0, 3, -2]} intensity={3.2} />
+      <Model />
+      {/* <rectAreaLight
+        ref={rectAreaLighStayRef}
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, 4, -4]}
+        width={10}
+        height={10}
+        intensity={4}
+      /> */}
       {/* <pointLight
         ref={movingLight}
         intensity={1.5}
@@ -89,7 +90,6 @@ const Rock = React.memo(() => {
         distance={15}
         intensity={10}
       /> */}
-      <Model />
     </>
   );
 });

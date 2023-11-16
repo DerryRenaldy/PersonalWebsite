@@ -21,7 +21,7 @@ type GLTFResult = GLTF & {
 
 const Model: React.FC<JSX.IntrinsicElements["group"]> = React.memo((props) => {
   const { nodes, materials } = useMemo(() => {
-    return useGLTF("/rock_2.glb") as GLTFResult;
+    return useGLTF("/rock.glb") as GLTFResult;
   }, []);
 
   const { viewport } = useThree();
