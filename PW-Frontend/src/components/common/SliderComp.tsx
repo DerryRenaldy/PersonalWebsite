@@ -27,7 +27,7 @@ const SliderComp = ({
     slidesToShow: slideNum,
     slidesToScroll: 1,
     initialSlide: 0,
-    speed: 500,
+    speed: 2000,
     cssEase: "ease",
     appendDots: (dots: any) => (
       <div

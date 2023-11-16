@@ -29,8 +29,8 @@ const Modeling = () => {
             slideNum={
               screenType === "TABLET" ? 2 : screenType === "DESKTOP" ? 3 : 1
             }
-            autoplay={false}
-            autoplaySpeed={0}
+            autoplay={true}
+            autoplaySpeed={2000}
           >
             {ModelingExpertiseDataMobile.map((data) => (
               <li key={data.key}>
