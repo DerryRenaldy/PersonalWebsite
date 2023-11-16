@@ -30,7 +30,7 @@ const Modeling = () => {
               screenType === "TABLET" ? 2 : screenType === "DESKTOP" ? 3 : 1
             }
             autoplay={true}
-            autoplaySpeed={2000}
+            autoplaySpeed={10000}
           >
             {ModelingExpertiseDataMobile.map((data) => (
               <li key={data.key}>
