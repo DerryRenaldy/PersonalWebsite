@@ -338,7 +338,7 @@ export const MatterJS = () => {
         return colors[randomIndex];
       };
 
-      for (let i = 0; i < 400; i++) {
+      for (let i = 0; i < 300; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
