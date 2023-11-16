@@ -357,11 +357,11 @@ export const MatterJS = () => {
         return colors[randomIndex];
       };
 
-      for (let i = 0; i < 600; i++) {
+      for (let i = 0; i < 450; i++) {
         let circle = Bodies.circle(
           Math.random() * (matterRef.current.clientWidth - 10) + 10,
           i,
-          15,
+          16,
           {
             render: {
               fillStyle: getRandomColor(),
@@ -489,7 +489,7 @@ export const MatterJS = () => {
           >
             <img
               src={Image.background}
-              className="w-[100svw] h-[100svh] border absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
+              className="w-[100svw] h-[100svh] absolute top-1/2 -translate-y-[50%] left-1/2 -translate-x-[50%]"
             />
           </div>
 
