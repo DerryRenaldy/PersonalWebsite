@@ -3,37 +3,50 @@ import VariantsNavbar from "../variants";
 import clsx from "clsx";
 import CVButton from "./CVButton";
 import { useSectionContext } from "components/pages/Context";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const NavigationButtons = () => {
   const { section, isScrolledCtx } = useSectionContext();
   const positionInput = useAnimation();
   const positionButton = useAnimation();
+  const inputRef = useRef<HTMLInputElement>(null!);
+
+  useEffect(() => {
+    document.body.style.overflow = "unset";
+  }, []);
 
   useEffect(() => {
     if (isScrolledCtx) {
       positionInput.start({
         x: "101%",
-        type: "ease",
-        transition: { x: { duration: 1, ease: "circOut" } },
+        transition: {
+          x: { duration: 1.5 },
+          type: "tween",
+          ease: "circOut",
+        },
       });
 
       positionButton.start({
         x: "0%",
         type: "ease",
-        transition: { x: { duration: 1, ease: "circIn" } },
+        transition: { x: { duration: 1.5, ease: "circIn" } },
       });
     } else {
       positionInput.start({
         x: "0%",
-        type: "spring",
-        transition: { x: { duration: 1, ease: "circIn" } },
+        transition: {
+          x: {
+            duration: 1.5,
+            type: "tween",
+            ease: "circIn",
+          },
+        },
       });
 
       positionButton.start({
         x: "101%",
         type: "ease",
-        transition: { x: { duration: 1, ease: "circOut" } },
+        transition: { x: { duration: 1.5, ease: "circOut" } },
       });
     }
   }, [isScrolledCtx]);
@@ -62,6 +75,7 @@ const NavigationButtons = () => {
       >
         <div className="relative h-10 flex flex-row overflow-hidden justify-center rounded-xl items-center">
           <motion.input
+            ref={inputRef}
             className="rounded-xl absolute right-0 w-full h-full focus:outline-1 focus:outline-[#626064] text-[#6D6D6D] bg-[#303030] font-rubik font-semibold z-[100] px-6"
             placeholder="Enter Your Name..."
             initial={{ x: 0 }}
@@ -69,10 +83,12 @@ const NavigationButtons = () => {
             onAnimationStart={() => {
               // console.log("Start Animation");
               document.body.style.overflow = "hidden";
+              inputRef.current.blur();
             }}
             onAnimationComplete={() => {
               // console.log("Complete Animation");
               document.body.style.overflow = "unset";
+              inputRef.current.blur();
             }}
           />
           <div className="flex flex-row h-full rounded-xl">
