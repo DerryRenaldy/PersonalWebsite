@@ -25,6 +25,7 @@ const VideoCard = React.memo(
     });
 
     const videoRef = useRef<ReactPlayer>(null!);
+    const thumbnailRef = useRef<HTMLImageElement>(null!);
     const opacity = useAnimation();
     const position = useAnimation();
 
@@ -102,13 +103,14 @@ const VideoCard = React.memo(
           ></motion.div>
 
           <img
+            ref={thumbnailRef}
             src={thumbnailUrl}
             className={clsx(" rounded-2xl", "w-[220px]")}
             loading="lazy"
             alt=""
           />
           {videoState.isPlaying && (
-            <div className="absolute top-0 rounded-2xl">
+            <div className="absolute top-0 rounded-2xl w-[220px]">
               <ReactPlayer
                 ref={videoRef}
                 url={videoUrl}
@@ -116,7 +118,7 @@ const VideoCard = React.memo(
                 // light={videoState.isPlaying ? false : <img src={thumbnailUrl} />}
                 loop={videoState.isLooping}
                 height="auto"
-                width={220}
+                width={thumbnailRef.current.clientWidth}
                 fallback={<div>Loading...</div>}
                 style={{
                   border: "0px solid white",
