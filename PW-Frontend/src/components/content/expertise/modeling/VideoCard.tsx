@@ -1,9 +1,10 @@
 import { ModelingThumbnail } from "@assets/videoModeling";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "@assets/images";
 import clsx from "clsx";
 import React from "react";
+import ReactPlayer from "react-player";
 
 interface VideoCardProps {
   title?: string;
@@ -11,63 +12,44 @@ interface VideoCardProps {
   thumbnailUrl?: string;
 }
 
+interface VideoState {
+  isPlaying: boolean;
+  isLooping: boolean;
+}
+
 const VideoCard = React.memo(
   ({ videoUrl, title, thumbnailUrl }: VideoCardProps) => {
-    const videoRef = useRef<HTMLVideoElement>(null);
+    const [videoState, setVideoState] = useState<VideoState>({
+      isPlaying: false,
+      isLooping: false,
+    });
+
+    const videoRef = useRef<ReactPlayer>(null!);
     const opacity = useAnimation();
     const position = useAnimation();
-    const videoElement = videoRef.current;
 
     const handleMouseEnter = () => {
-      const videoElement = videoRef.current;
-      if (videoElement) {
-        videoElement.play();
-        videoElement.loop = true;
-        opacity.start({ opacity: 0, transition: { duration: 2 } });
-        position.start({
-          opacity: 0,
-          rotate: 0,
-          transition: { duration: 0.5 },
-        });
-      }
+      setVideoState({ isPlaying: true, isLooping: true });
+      opacity.start({ opacity: 0, transition: { duration: 2 } });
+      position.start({
+        opacity: 0,
+        rotate: 0,
+        transition: { duration: 0.5 },
+      });
     };
 
     const handleMouseLeave = () => {
-      const videoElement = videoRef.current;
-      if (videoElement) {
-        videoElement.pause();
-        videoElement.currentTime = 0;
-        videoElement.loop = false;
-        opacity.start({ opacity: 1 });
-        position.start({
-          opacity: 1,
-          rotate: -6,
-          transition: { duration: 1 },
-        });
+      setVideoState({ isPlaying: false, isLooping: false });
+      if (videoRef.current) {
+        videoRef.current.seekTo(0);
       }
+      opacity.start({ opacity: 1 });
+      position.start({
+        opacity: 1,
+        rotate: -6,
+        transition: { duration: 1 },
+      });
     };
-
-    useEffect(() => {
-      const handleTimeUpdate = () => {
-        const videoElement = videoRef.current;
-        if (videoElement) {
-          if (videoElement.duration - videoElement.currentTime <= 1) {
-            videoElement.currentTime = 0;
-            videoElement.play();
-          }
-        }
-      };
-
-      if (videoElement) {
-        videoElement.addEventListener("timeupdate", handleTimeUpdate, false);
-      }
-
-      return () => {
-        if (videoElement) {
-          videoElement.removeEventListener("timeupdate", handleTimeUpdate);
-        }
-      };
-    }, []);
 
     return (
       <div className="flex justify-center items-center p-[50px]">
@@ -118,14 +100,22 @@ const VideoCard = React.memo(
             className="h-full flex items-end p-4 absolute w-full rounded-2xl z-20 backdrop-blur bg-[#2d2d2d]/40"
             animate={opacity}
           ></motion.div>
-          <video
+
+          <ReactPlayer
             ref={videoRef}
-            preload="auto"
-            className={clsx("relative z-10 rounded-2xl", "w-[220px]")}
+            url={videoUrl}
+            playing={videoState.isPlaying}
+            loop={videoState.isLooping}
+            height="auto"
+            width={220}
+            fallback={<div>Loading...</div>}
+            style={{
+              border: "0px solid white",
+              borderRadius: 16,
+              zIndex: 10,
+            }}
             muted
-          >
-            <source src={videoUrl} type="video/webm" className="border" />
-          </video>
+          ></ReactPlayer>
         </div>
       </div>
     );
