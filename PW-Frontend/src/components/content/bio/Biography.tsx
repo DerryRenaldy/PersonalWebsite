@@ -26,7 +26,7 @@ const Biography = () => {
   }, [isTopInView]);
 
   return (
-    <div ref={containerRef} className="border border-[#080808]">
+    <div ref={containerRef} className="border border-[#0B0B0B]">
       <Title title={"Biography"} />
       <div className="relative">
         <div className={clsx("lg:p-10", "p-4")}>

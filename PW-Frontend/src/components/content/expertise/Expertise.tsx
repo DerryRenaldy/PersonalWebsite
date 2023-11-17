@@ -22,7 +22,7 @@ const Expertise = () => {
   return (
     <div
       ref={containerRef}
-      className="border border-[#080808] flex flex-col justify-center items-center"
+      className="border border-[#0B0B0B] flex flex-col justify-center items-center"
     >
       <Title title={"Expertise"} />
       <div className="py-6">

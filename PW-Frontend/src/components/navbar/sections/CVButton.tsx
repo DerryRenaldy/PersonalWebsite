@@ -1,53 +1,42 @@
-import { AnimationControls, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import VariantsNavbar from "../variants";
 import clsx from "clsx";
 
 type Props = {
-  isScrolled: boolean;
-  buttonPos: AnimationControls;
+  textButton: string;
+  fileUrl: string;
 };
 
-const CVButton = ({ isScrolled, buttonPos }: Props) => {
+const CVButton = ({ textButton, fileUrl }: Props) => {
   return (
     <>
-      {!isScrolled && (
+      <AnimatePresence>
         <motion.div
-          exit={{
-            x: 50,
-            opacity: 0,
-            transition: {
-              x: {
-                duration: 0.5,
-              },
-            },
-          }}
-          layout
-          animate={buttonPos}
           className={clsx(
-            "relative text-sm sm:flex items-center font-rubik font-semibold text-[#575757]",
+            "relative text-sm sm:flex h-10 w-32 rounded-xl items-center bg-white font-rubik font-semibold text-[#575757]",
             "hidden"
           )}
         >
           <motion.div
             variants={VariantsNavbar.hovered}
             whileHover="hover"
-            className="relative z-50 px-3 py-2 text-sm text-center bg-white cursor-pointer rounded-xl"
+            className="relative px-3 py-2 text-sm  z-50 text-center w-full bg-white cursor-pointer rounded-xl"
           >
             <div className="relative overflow-hidden text-[#6e6e6e] z-30">
               <motion.button
                 variants={VariantsNavbar.hoverButtonInactive}
                 className="select-none"
               >
-                Open CV
+                {textButton}
               </motion.button>
               <motion.a
                 className="absolute left-0 text-black"
                 initial={{ y: 12, opacity: 0 }}
                 variants={VariantsNavbar.hoverButtonActive}
-                href="https://cv.derryrenaldy.tech"
+                href={fileUrl}
                 target="_blank"
               >
-                <button className="select-none">Open CV</button>
+                <button className="select-none">{textButton}</button>
               </motion.a>
             </div>
           </motion.div>
@@ -58,7 +47,7 @@ const CVButton = ({ isScrolled, buttonPos }: Props) => {
             <div className="absolute border w-[80%] h-[60%] top-[50%] translate-y-[-50%] right-1 bg-[rgb(117,215,245)] blur-[15px]"></div>
           </div>
         </motion.div>
-      )}
+      </AnimatePresence>
     </>
   );
 };

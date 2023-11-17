@@ -1,35 +1,30 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import "./Navbar.css";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import NavigationButtons from "./sections/NavigationButtons";
-import CVButton from "./sections/CVButton";
 import clsx from "clsx";
 import { useSectionContext } from "components/pages/Context";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const buttonPos = useAnimation();
-  const { section, isScrolledCtx } = useSectionContext();
+  const { section } = useSectionContext();
   const ref = useRef<HTMLElement>(null);
+  // const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
+  // useEffect(() => {
+  //   if (!ref.current) {
+  //     return;
+  //   }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsScrolled(entry.isIntersecting);
-      },
-      { rootMargin: "-300px" }
-    );
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       setIsScrolled(entry.isIntersecting);
+  //     },
+  //     { rootMargin: "-300px" }
+  //   );
 
-    observer.observe(ref.current);
-
-    console.log(isScrolled);
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+  //   observer.observe(ref.current);
+  //   return () => observer.disconnect();
+  // }, []);
 
   // useEffect(() => {
   //   moveOpenCVButton(isScrolled, buttonPos);
@@ -55,7 +50,7 @@ const Navbar = () => {
     >
       <p
         className={clsx(
-          "py-1 px-10 rounded-b-lg pointer-events-none backdrop-blur bg-[#2a2a2a]/50 font-bold text-center text-[#C49B66]",
+          "py-1 px-10rounded-b-lg pointer-events-none backdrop-blur bg-[#2a2a2a]/50 font-bold text-center text-[#C49B66]",
           "md:text-lg md:absolute md:left-0 md:[writing-mode:vertical-lr] md:px-1 md:py-10 md:top-10 md:rounded-lg",
           "text-sm rounded-b-lg"
         )}
@@ -67,17 +62,14 @@ const Navbar = () => {
 
       <motion.div
         initial={false}
-        layout="position"
-        className="pointer-events-auto gap-x-4 rounded-2xl"
+        layout
+        className="pointer-events-auto flex items-center gap-x-4 rounded-2xl"
         style={{
           display: "flex",
           justifyContent: "center",
         }}
       >
-        {/* NAVIGATION BUTTONS*/}
         <NavigationButtons />
-        {/* BUTTON OPEN CV */}
-        <CVButton isScrolled={isScrolledCtx} buttonPos={buttonPos} />
       </motion.div>
     </header>
   );
