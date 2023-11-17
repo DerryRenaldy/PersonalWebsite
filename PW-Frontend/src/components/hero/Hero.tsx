@@ -49,20 +49,22 @@ const Hero = () => {
   }, [isScrolled]);
 
   return (
-    <section ref={containerRef} className="relative">
-      {/* <div className="absolute top-0 bottom-0 left-0 right-0" ></div> */}
-      <div>
-        <RockModel />
-      </div>
-      <div className="h-[100svh] flex justify-center items-center z-[100]">
-        <div className="z-[100] pointer-events-none text-white font-nunito font-bold text-center flex flex-col gap-y-2">
-          {/* <CVWebsite /> */}
-          {/* <HoverIndicator ImageURL={Image.arrowWhite} Control={indicator} /> */}
-          <TitleText />
+    <div className="relative h-[150svh]">
+      <div ref={containerRef} className="absolute w-full h-screen" />
+      <section className="sticky top-0">
+        <div>
+          <RockModel />
         </div>
-        <ScrollIndicator ImageURL={Image.arrowBlack} Control={indicator} />
-      </div>
-    </section>
+        <div className="h-[100svh] flex justify-center items-center z-[100]">
+          <div className="z-[100] pointer-events-none text-white font-nunito font-bold text-center flex flex-col gap-y-2">
+            {/* <CVWebsite /> */}
+            {/* <HoverIndicator ImageURL={Image.arrowWhite} Control={indicator} /> */}
+            <TitleText />
+          </div>
+          <ScrollIndicator ImageURL={Image.arrowBlack} Control={indicator} />
+        </div>
+      </section>
+    </div>
   );
 };
 
