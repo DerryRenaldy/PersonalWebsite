@@ -15,7 +15,8 @@ const Content = () => {
           <div className="w-fit">
             <ReactPlayer
               url={ModelingExpertiseDataMobile[1].videoUrl}
-              controls={false}
+              light={true}
+              controls={true}
               playing={true}
               loop={true}
               muted={true}

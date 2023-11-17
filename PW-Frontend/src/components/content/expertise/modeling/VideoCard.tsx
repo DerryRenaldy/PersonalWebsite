@@ -101,21 +101,32 @@ const VideoCard = React.memo(
             animate={opacity}
           ></motion.div>
 
-          <ReactPlayer
-            ref={videoRef}
-            url={videoUrl}
-            playing={videoState.isPlaying}
-            loop={videoState.isLooping}
-            height="auto"
-            width={220}
-            fallback={<div>Loading...</div>}
-            style={{
-              border: "0px solid white",
-              borderRadius: 16,
-              zIndex: 10,
-            }}
-            muted
-          ></ReactPlayer>
+          <img
+            src={thumbnailUrl}
+            className={clsx(" rounded-2xl", "w-[220px]")}
+            loading="lazy"
+            alt=""
+          />
+          {videoState.isPlaying && (
+            <div className="absolute top-0 rounded-2xl">
+              <ReactPlayer
+                ref={videoRef}
+                url={videoUrl}
+                playing={videoState.isPlaying}
+                // light={videoState.isPlaying ? false : <img src={thumbnailUrl} />}
+                loop={videoState.isLooping}
+                height="auto"
+                width={220}
+                fallback={<div>Loading...</div>}
+                style={{
+                  border: "0px solid white",
+                  borderRadius: 16,
+                  zIndex: 10,
+                }}
+                muted
+              />
+            </div>
+          )}
         </div>
       </div>
     );
