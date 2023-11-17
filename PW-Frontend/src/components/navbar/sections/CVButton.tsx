@@ -30,7 +30,7 @@ const CVButton = ({ textButton, fileUrl }: Props) => {
                 {textButton}
               </motion.button>
               <motion.a
-                className="absolute left-0 text-black"
+                className="absolute left-0 w-full text-black"
                 initial={{ y: 12, opacity: 0 }}
                 variants={VariantsNavbar.hoverButtonActive}
                 href={fileUrl}
