@@ -1,4 +1,4 @@
-import Quotes from "./quotes/Quotes";
+// import Quotes from "./quotes/Quotes";
 import MissionAndGoal from "./missionAndGoal/MissionAndGoal";
 import Now from "./currentSituation/Now";
 import Qualification from "./qualification/Qualification";
@@ -54,9 +54,9 @@ const Biography = () => {
             </div>
             {/* SECOND SECTION */}
             <div className={clsx("lg:block", "hidden")}></div>
-            <div className="bg-secondary">
+            {/* <div className="bg-secondary">
               <Quotes />
-            </div>
+            </div> */}
             <div className="col-span-2 bg-secondary">
               <MissionAndGoal />
             </div>
