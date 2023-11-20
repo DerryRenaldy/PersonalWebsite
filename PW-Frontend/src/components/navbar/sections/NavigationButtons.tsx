@@ -81,7 +81,7 @@ const NavigationButtons = () => {
           "text-xs"
         )}
       >
-        <div className="relative h-10 flex flex-row overflow-hidden justify-center rounded-xl items-center">
+        <div className="relative sm:h-10 h-6 flex flex-row overflow-hidden justify-center rounded-xl items-center">
           <motion.div
             className={clsx(
               "absolute z-[50] right-0 w-full gap-x-4 rounded-xl h-full flex flex-row font-rubik font-semibold"
@@ -211,7 +211,7 @@ const NavigationButtons = () => {
 
       <div
         className={clsx(
-          "absolute -translate-x-[50%] font-rubik h-10 left-1/2 text-xs translate-y-[120%] font-semibold text-[#575757] bg-[#212023] border border-[#626064] rounded-xl px-3 ml-2 justify-center items-center",
+          "absolute -translate-x-[50%] font-rubik sm:h-10 h-8 left-1/2 text-xs translate-y-[120%] font-semibold text-[#575757] bg-[#212023] border border-[#626064] rounded-xl px-3 ml-2 justify-center items-center",
           "md:hidden",
           "flex"
         )}
