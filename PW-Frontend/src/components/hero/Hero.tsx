@@ -50,9 +50,9 @@ const Hero = () => {
 
   return (
     <div className="relative h-[150svh]">
-      <div ref={containerRef} className="absolute w-full h-screen" />
+      <div ref={containerRef} className="absolute w-full h-[100svh]" />
       <section className="sticky top-0">
-        <div>
+        <div className="hidden md:block">
           <RockModel />
         </div>
         <div className="h-[100svh] flex justify-center items-center z-[100]">

@@ -77,13 +77,15 @@ const NavigationButtons = () => {
       </div>
       <div
         className={clsx(
-          "relative flex flex-row h-full mr-[6px] justify-center items-center md:text-sm font-bold text-[#575757] md:gap-x-2",
+          "relative flex flex-row h-full mr-[6px] justify-center items-center sm:text-sm font-bold text-[#575757] md:gap-x-2",
           "text-xs"
         )}
       >
         <div className="relative h-10 flex flex-row overflow-hidden justify-center rounded-xl items-center">
           <motion.div
-            className="absolute z-[50] right-0 w-full gap-x-4 rounded-xl h-full flex flex-row font-rubik font-semibold"
+            className={clsx(
+              "absolute z-[50] right-0 w-full gap-x-4 rounded-xl h-full flex flex-row font-rubik font-semibold"
+            )}
             initial={{ x: 0 }}
             animate={positionInput}
             onAnimationStart={() => {
@@ -106,9 +108,11 @@ const NavigationButtons = () => {
             />
           </motion.div>
           <div className="flex flex-row h-full rounded-xl">
-            <div className="rounded-xl mr-2 overflow-hidden">
+            <div className={clsx("rounded-xl mr-2 overflow-hidden")}>
               <motion.div
-                className="flex flex-row gap-x-2 h-full rounded-xl justify-center items-center"
+                className={clsx(
+                  "flex flex-row gap-x-2 h-full rounded-xl justify-center items-center"
+                )}
                 initial={{ x: 0 }}
                 animate={positionButton}
               >
@@ -176,7 +180,15 @@ const NavigationButtons = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <div className="h-full bg-[#212023] border border-[#626064] rounded-xl px-3 ml-2 flex justify-center items-center">
+
+            {/* NAME CONTAINER */}
+            <div
+              className={clsx(
+                "h-full bg-[#212023] border border-[#626064] rounded-xl px-3 ml-2 justify-center items-center",
+                "md:flex",
+                "hidden"
+              )}
+            >
               <div className="">Hi, {inputValue}!</div>
             </div>
           </div>
@@ -195,6 +207,16 @@ const NavigationButtons = () => {
               : "https://drive.google.com/file/d/1R5tTl0XEhJTRB8-A-fD4hY9VspwrkVHX/view?usp=drive_link"
           }
         />
+      </div>
+
+      <div
+        className={clsx(
+          "absolute -translate-x-[50%] font-rubik h-10 left-1/2 text-xs translate-y-[120%] font-semibold text-[#575757] bg-[#212023] border border-[#626064] rounded-xl px-3 ml-2 justify-center items-center",
+          "md:hidden",
+          "flex"
+        )}
+      >
+        <div className="w-32 text-center">Hi, {inputValue}!</div>
       </div>
     </div>
   );

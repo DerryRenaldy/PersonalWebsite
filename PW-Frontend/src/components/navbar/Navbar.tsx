@@ -52,7 +52,7 @@ const Navbar = () => {
         className={clsx(
           "py-1 px-10rounded-b-lg pointer-events-none backdrop-blur bg-[#2a2a2a]/50 font-bold text-center text-[#C49B66]",
           "md:text-lg md:absolute md:left-0 md:[writing-mode:vertical-lr] md:px-1 md:py-10 md:top-10 md:rounded-lg",
-          "text-sm rounded-b-lg"
+          "text-sm rounded-b-lg py-1 px-10"
         )}
         // animate={{ opacity: 1 }}
         // initial={{ opacity: 0 }}

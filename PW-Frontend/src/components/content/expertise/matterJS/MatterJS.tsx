@@ -296,63 +296,63 @@ export const MatterJS = () => {
       }
     );
 
-    if (!(screenType === "MOBILE")) {
-      // middleBox = Bodies.rectangle(
-      //   matterRef.current.clientWidth / 2,
-      //   matterRef.current.clientHeight / 2,
-      //   280,
-      //   80,
-      //   {
-      //     isStatic: true,
-      //     render: {
-      //       fillStyle: "transparent",
-      //     },
-      //   }
-      // );
-      // Composite.add(engine.world, middleBox);
+    // if (!(screenType === "MOBILE")) {
+    //   // middleBox = Bodies.rectangle(
+    //   //   matterRef.current.clientWidth / 2,
+    //   //   matterRef.current.clientHeight / 2,
+    //   //   280,
+    //   //   80,
+    //   //   {
+    //   //     isStatic: true,
+    //   //     render: {
+    //   //       fillStyle: "transparent",
+    //   //     },
+    //   //   }
+    //   // );
+    //   // Composite.add(engine.world, middleBox);
 
-      const colors = [
-        "#F8F8FF",
-        "#CAC9CD",
-        "#9B9A9C",
-        "#6D6A6A",
-        "#3E3B39",
-        "#100C07",
-      ];
+    //   const colors = [
+    //     "#F8F8FF",
+    //     "#CAC9CD",
+    //     "#9B9A9C",
+    //     "#6D6A6A",
+    //     "#3E3B39",
+    //     "#100C07",
+    //   ];
 
-      // const colors2 = [
-      //   "#8FD1D5",
-      //   "#42B3C8",
-      //   "#B0362C",
-      //   "#278DBF",
-      //   "#D6D077",
-      //   "#C28E1B",
-      //   "#545552",
-      //   "#726CA9",
-      //   "#6D8AB7",
-      //   "#E1E1E1",
-      // ];
+    //   // const colors2 = [
+    //   //   "#8FD1D5",
+    //   //   "#42B3C8",
+    //   //   "#B0362C",
+    //   //   "#278DBF",
+    //   //   "#D6D077",
+    //   //   "#C28E1B",
+    //   //   "#545552",
+    //   //   "#726CA9",
+    //   //   "#6D8AB7",
+    //   //   "#E1E1E1",
+    //   // ];
 
-      const getRandomColor = () => {
-        const randomIndex = Math.floor(Math.random() * colors.length);
-        return colors[randomIndex];
-      };
+    //   const getRandomColor = () => {
+    //     const randomIndex = Math.floor(Math.random() * colors.length);
+    //     return colors[randomIndex];
+    //   };
 
-      for (let i = 0; i < 300; i++) {
-        let circle = Bodies.circle(
-          Math.random() * (matterRef.current.clientWidth - 10) + 10,
-          i,
-          16,
-          {
-            render: {
-              fillStyle: getRandomColor(),
-              opacity: 0.4,
-            },
-          }
-        );
-        Composite.add(engine.world, circle);
-      }
-    }
+    //   for (let i = 0; i < 300; i++) {
+    //     let circle = Bodies.circle(
+    //       Math.random() * (matterRef.current.clientWidth - 10) + 10,
+    //       i,
+    //       16,
+    //       {
+    //         render: {
+    //           fillStyle: getRandomColor(),
+    //           opacity: 0.4,
+    //         },
+    //       }
+    //     );
+    //     Composite.add(engine.world, circle);
+    //   }
+    // }
 
     // add all of the bodies to the world
     Composite.add(engine.world, [
@@ -487,13 +487,15 @@ export const MatterJS = () => {
           </div>
 
           {/* TEXT EXPERTISE */}
-          {/* <div
+          <div
             className={`absolute text-white p-4 rounded-xl backdrop-blur-sm pointer-events-none font-semibold select-none font-rubik  ${
-              screenType === "MOBILE" ? "text-[20px]" : "text-[40px] h-fit top-6"
+              screenType === "MOBILE"
+                ? "text-[20px]"
+                : "text-[40px] h-fit top-6"
             }`}
           >
             <p>Web Development</p>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

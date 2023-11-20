@@ -1,6 +1,6 @@
 import Title from "components/common/Title";
 import MatterJS from "./matterJS/MatterJS";
-import Modeling from "./modeling/carousel/Modeling";
+// import Modeling from "./modeling/carousel/Modeling";
 import { useEffect, useRef } from "react";
 import { useSectionContext } from "components/pages/Context";
 import useIsTopInView from "components/hooks/useIsTopInView";
@@ -27,7 +27,7 @@ const Expertise = () => {
       <Title title={"Expertise"} />
       <div className="py-6">
         <MatterJS />
-        <Modeling />
+        {/* <Modeling /> */}
       </div>
     </div>
   );
