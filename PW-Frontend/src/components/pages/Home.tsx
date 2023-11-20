@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import CustomScrollbar from "components/scrollbar/CustomScrollbar";
 import { SectionContext } from "./Context";
 import Image from "@assets/images";
